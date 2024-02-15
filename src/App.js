@@ -2,14 +2,20 @@ import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useIntlCommon } from "./_utils/lang/intl-common";
 
-import AboutPageView from "./presentation/AboutPage/pages/AboutPageView";
-import AppendixPageView from "./presentation/AppendixPage/pages/AppendixPageView";
-import GalleryPageView from "./presentation/GalleryPage/pages/GalleryPageView";
-import HistoryPageView from "./presentation/HistoryPage/pages/HistoryPageView";
-import HomePageView from "./presentation/HomePage/pages/HomePageView";
-import LandingPageView from "./presentation/LandingPage/pages/LandingPageView";
-import UserPageView from "./presentation/User/pages/UserPageView";
-import PageNotFoundView from "./presentation/_AuthenticatedLayout/pages/PageNotFound/PageNotFoundView";
+import ExampleState from "./presentation/useState";
+import ExampleCallback from "./presentation/useCallback";
+import ExampleContext from "./presentation/useContext";
+import ExampleDebug from "./presentation/useDebug";
+import ExampleDeferred from "./presentation/useDeferred";
+import ExampleEffect from "./presentation/useEffect";
+import ExampleId from "./presentation/useId";
+import ExampleImperative from "./presentation/useImperative";
+import ExampleLayout from "./presentation/useLayout";
+import ExampleMemo from "./presentation/useMemo";
+import ExampleReducer from "./presentation/useReducer";
+import ExampleRef from "./presentation/useRef";
+import ExampleTransition from "./presentation/useTransition";
+import LandingPage from "./presentation/_landingPage";
 
 const App = () => {
   const { siteLabel } = useIntlCommon();
@@ -21,15 +27,20 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="*" element={<PageNotFoundView />} />
-        <Route path="/" element={<LandingPageView />} />
-        <Route path="/home" element={<HomePageView />} />
-        <Route path="/about" element={<AboutPageView />} />
-        <Route path="/appendix" element={<AppendixPageView />} />
-        <Route path="/gallery/picture" element={<GalleryPageView />} />
-        <Route path="/gallery/video" element={<GalleryPageView />} />
-        <Route path="/history" element={<HistoryPageView />} />
-        <Route path="/user" element={<UserPageView />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/useState" element={<ExampleState />} />
+        <Route path="/useCallback" element={<ExampleCallback />} />
+        <Route path="/useContext" element={<ExampleContext />} />
+        <Route path="/useDug" element={<ExampleDebug />} />
+        <Route path="/useDeferred" element={<ExampleDeferred />} />
+        <Route path="/useEffect" element={<ExampleEffect />} />
+        <Route path="/useId" element={<ExampleId />} />
+        <Route path="/useImperative" element={<ExampleImperative />} />
+        <Route path="/useLayout" element={<ExampleLayout />} />
+        <Route path="/useMemo" element={<ExampleMemo />} />
+        <Route path="/useReducer" element={<ExampleReducer />} />
+        <Route path="/useRef" element={<ExampleRef />} />
+        <Route path="/useTransition" element={<ExampleTransition />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 
-function ExampleContext() {
+export function ExampleContext() {
   return <div>Example</div>;
 }
 
-export default Example;
+export default ExampleContext;

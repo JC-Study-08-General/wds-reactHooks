@@ -1,7 +1,7 @@
 import React from "react";
 
 function ExampleCallback() {
-  return <div>example</div>;
+  return <div>callback</div>;
 }
 
 export default ExampleCallback;
