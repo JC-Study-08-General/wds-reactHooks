@@ -5,14 +5,14 @@ import Footer from "../components/Footer/Footer";
 import NavBar from "../components/NavBar/NavBar";
 import useMainLayoutModel from "./use-main-layout.view-model";
 
-const MainLayout = ({ children }) => {
+function MainLayout({ children }) {
   const vm = useMainLayoutModel();
 
   return (
     <Box
       sx={{
         display: "grid",
-        gridTemplateColumns: "auto ifr",
+        gridTemplateColumns: "auto 1fr",
         gridTemplateRows: "1fr auto",
         height: "100dvh",
         maxHeight: "100dvh",
@@ -26,6 +26,6 @@ const MainLayout = ({ children }) => {
       <Footer footer={vm.footer} link={vm.footerLink} />
     </Box>
   );
-};
+}
 
 export default MainLayout;

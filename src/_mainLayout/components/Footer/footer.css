@@ -1,8 +1,8 @@
 #footer_box {
   display: flex;
   align-items: center;
-  background-color: #fa8ab0;
-  border-top: 1px solid #b61588;
+  background-color: #00aaff;
+  border-top: 1px solid black;
   height: 35px;
 }
 

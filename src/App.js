@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import LandingPage from "./content/_landingPage";
+import LandingPage from "./content/LandingPage";
 import ExampleCallback from "./content/useCallback";
 import ExampleContext from "./content/useContext";
 import ExampleDebug from "./content/useDebug";
@@ -23,7 +23,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/usecallback" element={<ExampleCallback />} />
         <Route path="/usecontext" element={<ExampleContext />} />
-        <Route path="/usedug" element={<ExampleDebug />} />
+        <Route path="/usedebug" element={<ExampleDebug />} />
         <Route path="/usedeferred" element={<ExampleDeferred />} />
         <Route path="/useeffect" element={<ExampleEffect />} />
         <Route path="/useid" element={<ExampleId />} />

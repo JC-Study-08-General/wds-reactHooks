@@ -1,4 +1,4 @@
-const useMainLayoutModel = () => {
+function useMainLayoutModel() {
   try {
     return {
       footer: `justCoder ${new Date().getFullYear()}`,
@@ -7,6 +7,6 @@ const useMainLayoutModel = () => {
   } catch (error) {
     return error;
   }
-};
+}
 
 export default useMainLayoutModel;

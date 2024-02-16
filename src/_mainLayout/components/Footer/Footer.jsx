@@ -2,7 +2,7 @@ import { Box, Link } from "@mui/material";
 import React from "react";
 import "./footer.css";
 
-const Footer = ({ footer, link }) => {
+function Footer({ footer, link }) {
   return (
     <Box id="footer_box">
       Copyright &copy;{" "}
@@ -11,6 +11,6 @@ const Footer = ({ footer, link }) => {
       </Link>
     </Box>
   );
-};
+}
 
 export default Footer;
