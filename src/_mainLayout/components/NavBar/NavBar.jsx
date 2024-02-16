@@ -10,43 +10,51 @@ function NavBar() {
       <NavLink key={`navHome`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/">
         Home
       </NavLink>
-      <NavLink key={`navHome`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/usestate">
+      <NavLink key={`navusestate`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/usestate">
         useState
       </NavLink>
-      <NavLink key={`navHome`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/useeffect">
+      <NavLink key={`navuseeffect`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/useeffect">
         useEffect
       </NavLink>
-      <NavLink key={`navHome`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/usecontext">
+      <NavLink key={`navusecontext`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/usecontext">
         useContext
       </NavLink>
-      <NavLink key={`navHome`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/useref">
+      <NavLink key={`navuseref`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/useref">
         useRef
       </NavLink>
-      <NavLink key={`navHome`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/usememo">
+      <NavLink key={`navusememo`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/usememo">
         useMemo
       </NavLink>
-      <NavLink key={`navHome`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/usecallback">
+      <NavLink key={`navusecallback`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/usecallback">
         useCallback
       </NavLink>
-      <NavLink key={`navHome`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/usereducer">
+      <NavLink key={`navusereducer`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/usereducer">
         useReducer
       </NavLink>
-      <NavLink key={`navHome`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/usetransition">
+      <NavLink
+        key={`navusetransition`}
+        className={({ isActive }) => (isActive ? "activeLink" : "")}
+        to="/usetransition"
+      >
         useTransition
       </NavLink>
-      <NavLink key={`navHome`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/usedeferred">
+      <NavLink key={`navusedeferred`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/usedeferred">
         useDeferred
       </NavLink>
-      <NavLink key={`navHome`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/uselayout">
+      <NavLink key={`navuselayout`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/uselayout">
         useLayout
       </NavLink>
-      <NavLink key={`navHome`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/usedebug">
+      <NavLink key={`navusedebug`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/usedebug">
         useDebug
       </NavLink>
-      <NavLink key={`navHome`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/useimperative">
+      <NavLink
+        key={`navuseimperative`}
+        className={({ isActive }) => (isActive ? "activeLink" : "")}
+        to="/useimperative"
+      >
         useImperative
       </NavLink>
-      <NavLink key={`navHome`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/useid">
+      <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/useid">
         useId
       </NavLink>
     </Stack>
