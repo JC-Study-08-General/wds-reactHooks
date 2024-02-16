@@ -1,0 +1,4 @@
+- hooks can only be used in function components not class based ones.
+- hooks have to run in the same order everytime.
+- You cannot mutate state!!
+- whenever state changes it trickes a page refresh
