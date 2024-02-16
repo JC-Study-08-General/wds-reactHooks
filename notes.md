@@ -1,3 +1,4 @@
+- React - Components should always start with a capital letter.
 - hooks can only be used in function components not class based ones.
 - hooks have to run in the same order everytime.
 - You cannot mutate state!!
