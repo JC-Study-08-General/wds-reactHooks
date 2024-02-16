@@ -38,21 +38,25 @@ function NavBar() {
       >
         useTransition
       </NavLink>
-      <NavLink key={`navusedeferred`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/usedeferred">
-        useDeferred
+      <NavLink
+        key={`navusedeferred`}
+        className={({ isActive }) => (isActive ? "activeLink" : "")}
+        to="/usedeferredvalue"
+      >
+        useDeferredValue
       </NavLink>
-      <NavLink key={`navuselayout`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/uselayout">
-        useLayout
+      <NavLink key={`navuselayout`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/uselayouteffect">
+        useLayoutEffect
       </NavLink>
-      <NavLink key={`navusedebug`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/usedebug">
-        useDebug
+      <NavLink key={`navusedebug`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/usedebugvalue">
+        useDebugValue
       </NavLink>
       <NavLink
         key={`navuseimperative`}
         className={({ isActive }) => (isActive ? "activeLink" : "")}
-        to="/useimperative"
+        to="/useimperativehandle"
       >
-        useImperative
+        useImperativeHandle
       </NavLink>
       <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/useid">
         useId

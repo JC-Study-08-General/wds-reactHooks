@@ -3,7 +3,6 @@ import MainLayout from "../_mainLayout/pages/MainLayoutView";
 import { Box, Button, List, ListItem, Stack, Typography } from "@mui/material";
 
 function ExampleEffect() {
-  //  *** Basic Example ***
   const [timer, setTimer] = useState(0);
   const [choice, setChoice] = useState("first");
 

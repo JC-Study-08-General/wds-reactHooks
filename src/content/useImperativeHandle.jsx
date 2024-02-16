@@ -2,7 +2,7 @@ import { Box, Button, List, ListItem, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
 import MainLayout from "../_mainLayout/pages/MainLayoutView";
 
-function ExampleReducer() {
+function ExampleImperative() {
   const [something, setSomething] = useState(null);
 
   function example() {
@@ -11,8 +11,8 @@ function ExampleReducer() {
   return (
     <MainLayout>
       <Stack justifyContent={"center"} alignItems={"center"}>
-        <a href="https://react.dev/reference/react/useReducer" target="_blank" rel="noreferrer">
-          <Typography variant="h2">Reference useReducer</Typography>
+        <a href="https://react.dev/reference/react/useImperativeHandle" target="_blank" rel="noreferrer">
+          <Typography variant="h2">Reference useImperativeHandle</Typography>
         </a>
         <Box sx={{ maxWidth: 800, margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
           <List sx={{ listStyleType: "disc" }}>
@@ -35,5 +35,4 @@ function ExampleReducer() {
     </MainLayout>
   );
 }
-
-export default ExampleReducer;
+export default ExampleImperative;
