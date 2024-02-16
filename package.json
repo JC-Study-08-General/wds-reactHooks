@@ -1,6 +1,7 @@
 {
-  "name": "wds",
+  "name": "wds-hooks",
   "version": "0.1.0",
+  "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -25,7 +26,6 @@
       "last 1 safari version"
     ]
   },
-  "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
