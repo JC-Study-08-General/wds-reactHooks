@@ -1,0 +1,10 @@
+import axios from "axios";
+
+const jsonPlaceholder = axios.create({ baseURL: "https://jsonplaceholder.typicode.com" });
+
+export const getTodos = async () => {
+  return await jsonPlaceholder
+    .get("/todos")
+    .then((res) => res)
+    .catch((err) => err);
+};
