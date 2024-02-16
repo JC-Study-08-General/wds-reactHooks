@@ -4,13 +4,11 @@ import { Stack } from "@mui/material";
 
 function LandingPage() {
   return (
-    <>
-      <MainLayout>
-        <Stack justifyContent={"center"} alignItems={"center"}>
-          Test
-        </Stack>
-      </MainLayout>
-    </>
+    <MainLayout>
+      <Stack justifyContent={"center"} alignItems={"center"}>
+        Test
+      </Stack>
+    </MainLayout>
   );
 }
 
