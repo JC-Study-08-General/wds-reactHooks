@@ -15,6 +15,7 @@ function LandingPage() {
             style={{ margin: "50px" }}
           />
         </a>
+        <Typography variant="h3">React Hooks Course</Typography>
       </Stack>
     </MainLayout>
   );

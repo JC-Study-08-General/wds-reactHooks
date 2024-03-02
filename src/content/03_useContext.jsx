@@ -11,6 +11,7 @@ function ExampleContext() {
   function exampleContext() {
     setBasicTheme((preTheme) => !preTheme);
   }
+
   return (
     <MainLayout>
       <Stack justifyContent={"center"} alignItems={"center"}>
@@ -32,7 +33,7 @@ function ExampleContext() {
               I have put 2 examples in this, one with custom hook one without.
             </ListItem>
             <ListItem sx={{ display: "list-item" }}>
-              It is common to with with custom hooks when using useContext.
+              It is common to use with custom hooks when using useContext.
             </ListItem>
           </List>
         </Box>
