@@ -1,6 +1,6 @@
 import { Box, Button, List, ListItem, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
-import MainLayout from "../_mainLayout/pages/MainLayoutView";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ExampleState() {
   // *** Basic Example ***

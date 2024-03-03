@@ -1,6 +1,6 @@
 import { Box, Button, List, ListItem, Stack, Typography } from "@mui/material";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-import MainLayout from "../_mainLayout/pages/MainLayoutView";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ExampleLayout() {
   const [show, setShow] = useState(false);

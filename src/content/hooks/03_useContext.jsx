@@ -1,8 +1,8 @@
 import { Box, Button, List, ListItem, Stack, Typography } from "@mui/material";
 import React, { useContext } from "react";
-import MainLayout from "../_mainLayout/pages/MainLayoutView";
-import { BasicThemeContext } from "../App";
-import { CustomThemeContext } from "../_custom/Custom";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
+import { BasicThemeContext } from "../../App";
+import { CustomThemeContext } from "../../_custom/Custom";
 
 function ExampleContext() {
   const [basicTheme, setBasicTheme] = useContext(BasicThemeContext);

@@ -1,6 +1,6 @@
 import { Box, List, ListItem, Stack, Typography } from "@mui/material";
 import React, { useDeferredValue, useMemo, useState } from "react";
-import MainLayout from "../_mainLayout/pages/MainLayoutView";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ExampleDeferred() {
   const [input, setInput] = useState("");

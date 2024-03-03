@@ -1,6 +1,6 @@
 import { Box, Button, List, ListItem, Stack, Typography } from "@mui/material";
 import React, { useReducer } from "react";
-import MainLayout from "../_mainLayout/pages/MainLayoutView";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 // This is all in capitals because it is a global none changing variable
 const ACTION = {

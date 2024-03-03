@@ -2,19 +2,19 @@ import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import LandingPage from "./content/_LandingPage";
-import ExampleCallback from "./content/06_useCallback";
-import ExampleContext from "./content/03_useContext";
-import ExampleDebug from "./content/11_useDebugValue";
-import ExampleDeferred from "./content/09_useDeferredValue";
-import ExampleEffect from "./content/02_useEffect";
-import ExampleId from "./content/13_useId";
-import ExampleImperative from "./content/12_useImperativeHandle";
-import ExampleLayout from "./content/10_useLayoutEffect";
-import ExampleMemo from "./content/05_useMemo";
-import ExampleReducer from "./content/07_useReducer";
-import ExampleRef from "./content/04_useRef";
-import ExampleState from "./content/01_useState";
-import ExampleTransition from "./content/08_useTransition";
+import ExampleState from "./content/hooks/01_useState";
+import ExampleEffect from "./content/hooks/02_useEffect";
+import ExampleContext from "./content/hooks/03_useContext";
+import ExampleRef from "./content/hooks/04_useRef";
+import ExampleMemo from "./content/hooks/05_useMemo";
+import ExampleCallback from "./content/hooks/06_useCallback";
+import ExampleReducer from "./content/hooks/07_useReducer";
+import ExampleTransition from "./content/hooks/08_useTransition";
+import ExampleDeferred from "./content/hooks/09_useDeferredValue";
+import ExampleLayout from "./content/hooks/10_useLayoutEffect";
+import ExampleDebug from "./content/hooks/11_useDebugValue";
+import ExampleImperative from "./content/hooks/12_useImperativeHandle";
+import ExampleId from "./content/hooks/13_useId";
 
 // useContext using a custom hooks
 import { CustomThemeProvider } from "./_custom/Custom";
@@ -31,19 +31,19 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/usecallback" element={<ExampleCallback />} />
-            <Route path="/usecontext" element={<ExampleContext />} />
-            <Route path="/usedebugvalue" element={<ExampleDebug />} />
-            <Route path="/usedeferredvalue" element={<ExampleDeferred />} />
-            <Route path="/useeffect" element={<ExampleEffect />} />
-            <Route path="/useid" element={<ExampleId />} />
-            <Route path="/useimperativehandle" element={<ExampleImperative />} />
-            <Route path="/uselayouteffect" element={<ExampleLayout />} />
-            <Route path="/usememo" element={<ExampleMemo />} />
-            <Route path="/usereducer" element={<ExampleReducer />} />
-            <Route path="/useref" element={<ExampleRef />} />
-            <Route path="/usestate" element={<ExampleState />} />
-            <Route path="/usetransition" element={<ExampleTransition />} />
+            <Route path="/hooks/usecallback" element={<ExampleCallback />} />
+            <Route path="/hooks/usecontext" element={<ExampleContext />} />
+            <Route path="/hooks/usedebugvalue" element={<ExampleDebug />} />
+            <Route path="/hooks/usedeferredvalue" element={<ExampleDeferred />} />
+            <Route path="/hooks/useeffect" element={<ExampleEffect />} />
+            <Route path="/hooks/useid" element={<ExampleId />} />
+            <Route path="/hooks/useimperativehandle" element={<ExampleImperative />} />
+            <Route path="/hooks/uselayouteffect" element={<ExampleLayout />} />
+            <Route path="/hooks/usememo" element={<ExampleMemo />} />
+            <Route path="/hooks/usereducer" element={<ExampleReducer />} />
+            <Route path="/hooks/useref" element={<ExampleRef />} />
+            <Route path="/hooks/usestate" element={<ExampleState />} />
+            <Route path="/hooks/usetransition" element={<ExampleTransition />} />
           </Routes>
         </BrowserRouter>
       </CustomThemeProvider>

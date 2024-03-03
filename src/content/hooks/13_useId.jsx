@@ -1,6 +1,6 @@
 import { Box, List, ListItem, Stack, Typography } from "@mui/material";
 import React, { useId } from "react";
-import MainLayout from "../_mainLayout/pages/MainLayoutView";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ExampleId() {
   return (

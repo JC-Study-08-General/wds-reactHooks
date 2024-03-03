@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MainLayout from "../_mainLayout/pages/MainLayoutView";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 import { Box, Button, List, ListItem, Stack, Typography } from "@mui/material";
 
 function ExampleEffect() {

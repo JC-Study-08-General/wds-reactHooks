@@ -1,6 +1,6 @@
 import { Box, List, ListItem, Stack, Typography } from "@mui/material";
 import React, { useState, useTransition } from "react";
-import MainLayout from "../_mainLayout/pages/MainLayoutView";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ExampleTransition() {
   const [isPending, startTransition] = useTransition();

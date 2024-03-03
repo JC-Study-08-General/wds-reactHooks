@@ -1,6 +1,6 @@
 import { Box, List, ListItem, Stack, Typography } from "@mui/material";
 import React, { useDebugValue, useState } from "react";
-import MainLayout from "../_mainLayout/pages/MainLayoutView";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ExampleDebug() {
   const [firstName, setFirstName] = useState(null);
