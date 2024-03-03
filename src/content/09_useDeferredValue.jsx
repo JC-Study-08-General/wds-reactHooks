@@ -1,12 +1,12 @@
-import { Box, Button, List, ListItem, Stack, Typography } from "@mui/material";
-import React, { useState } from "react";
+import { Box, List, ListItem, Stack, Typography } from "@mui/material";
+import React, { useDeferredValue, useMemo, useState } from "react";
 import MainLayout from "../_mainLayout/pages/MainLayoutView";
 
 function ExampleDeferred() {
-  const [something, setSomething] = useState(null);
+  const [input, setInput] = useState("");
 
-  function example() {
-    setSomething("example");
+  function handleChange(e) {
+    setInput(e.target.value);
   }
   return (
     <MainLayout>
@@ -16,24 +16,34 @@ function ExampleDeferred() {
         </a>
         <Box sx={{ maxWidth: 800, margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
           <List sx={{ listStyleType: "disc" }}>
+            <ListItem sx={{ display: "list-item" }}>Used to for slow apps, but use sparingly</ListItem>
+            <ListItem sx={{ display: "list-item" }}>Waits for a pause on the input before updating the state</ListItem>
             <ListItem sx={{ display: "list-item" }}>
-              <span style={{ fontWeight: "bold" }}>Example: </span> Example.
+              useDeferredValue replaces a 'throttling' or 'debounce' implementation
             </ListItem>
           </List>
         </Box>
         <Stack alignItems={"center"} sx={{ backgroundColor: "lightblue", padding: 8, borderRadius: 15 }}>
-          <Typography variant="h6" sx={{ marginBottom: 5 }}>
-            Example - {something}
-          </Typography>
-          <Stack direction={"row"} alignItems={"center"} gap={5}>
-            <Button variant="contained" onClick={() => example}>
-              Example
-            </Button>
-          </Stack>
+          <input type="text" value={input} onChange={handleChange} />
+          <ListExample input={input} />
         </Stack>
       </Stack>
     </MainLayout>
   );
+}
+
+function ListExample({ input }) {
+  const deferredInput = useDeferredValue(input);
+  const LIST_SIZE = 20000;
+  const list = useMemo(() => {
+    const l = [];
+    for (let i = 0; i < LIST_SIZE; i++) {
+      l.push(<Box key={i}>{deferredInput}</Box>);
+    }
+    return l;
+  }, [deferredInput]);
+
+  return list;
 }
 
 export default ExampleDeferred;

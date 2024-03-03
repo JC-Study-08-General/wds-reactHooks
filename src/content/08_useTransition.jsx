@@ -1,12 +1,23 @@
-import { Box, Button, List, ListItem, Stack, Typography } from "@mui/material";
-import React, { useState } from "react";
+import { Box, List, ListItem, Stack, Typography } from "@mui/material";
+import React, { useState, useTransition } from "react";
 import MainLayout from "../_mainLayout/pages/MainLayoutView";
 
 function ExampleTransition() {
-  const [something, setSomething] = useState(null);
+  const [isPending, startTransition] = useTransition();
+  const [input, setInput] = useState("");
+  const [list, setList] = useState([]);
 
-  function example() {
-    setSomething("example");
+  const LIST_SIZE = 20000;
+
+  function handleChange(e) {
+    setInput(e.target.value);
+    startTransition(() => {
+      const l = [];
+      for (let i = 0; i < LIST_SIZE; i++) {
+        l.push(e.target.value);
+      }
+      setList(l);
+    });
   }
   return (
     <MainLayout>
@@ -16,20 +27,22 @@ function ExampleTransition() {
         </a>
         <Box sx={{ maxWidth: 800, margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
           <List sx={{ listStyleType: "disc" }}>
+            <ListItem sx={{ display: "list-item" }}>Used to for slow apps, but use sparingly</ListItem>
+            <ListItem sx={{ display: "list-item" }}>Used to prioritise when state changes</ListItem>
             <ListItem sx={{ display: "list-item" }}>
-              <span style={{ fontWeight: "bold" }}>Example: </span> Example.
+              useTransition destructure 'isPending' and 'startTransition'
             </ListItem>
           </List>
         </Box>
         <Stack alignItems={"center"} sx={{ backgroundColor: "lightblue", padding: 8, borderRadius: 15 }}>
-          <Typography variant="h6" sx={{ marginBottom: 5 }}>
-            Example - {something}
-          </Typography>
-          <Stack direction={"row"} alignItems={"center"} gap={5}>
-            <Button variant="contained" onClick={() => example}>
-              Example
-            </Button>
-          </Stack>
+          <input type="text" value={input} onChange={handleChange} />
+          {isPending ? (
+            <Typography>Loading.....</Typography>
+          ) : (
+            list.map((l, i) => {
+              return <Box key={i}>{l}</Box>;
+            })
+          )}
         </Stack>
       </Stack>
     </MainLayout>
