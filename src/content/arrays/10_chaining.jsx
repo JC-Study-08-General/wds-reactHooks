@@ -3,12 +3,13 @@ import React from "react";
 import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 import { CopyBlock, dracula } from "react-code-blocks";
 
-function ArraysSome() {
+function ArraysChaining() {
+  // Make sure to have examples of splice and slice
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
         <a href="" target="_blank" rel="noreferrer">
-          <Typography variant="h2">Reference Some</Typography>
+          <Typography variant="h2">Reference Chaining</Typography>
         </a>
         <Stack direction={"row"}>
           <Box>
@@ -47,4 +48,4 @@ function ArraysSome() {
   );
 }
 
-export default ArraysSome;
+export default ArraysChaining;

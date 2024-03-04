@@ -32,7 +32,7 @@ function NavBar() {
   }
 
   return (
-    <Stack id="navBar" alignItems={"start"}>
+    <Stack id="navBar" alignItems={"start"} sx={{ height: "100dvh", overflow: "auto" }}>
       <NavLink key={`navHome`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/">
         Home
       </NavLink>
@@ -115,6 +115,51 @@ function NavBar() {
         </NavLink>
         <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/hooks/useid">
           useId
+        </NavLink>
+      </Stack>
+      <Typography variant="h6" onClick={() => handleChange(ACTION.CUSTOM)}>
+        React Custom Hooks
+      </Typography>
+      {/* <Stack alignItems={"end"} sx={{ display: navItems.hooks ? "flex" : "none" }}> */}
+      <Stack alignItems={"end"}>
+        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/custom/customhook">
+          Custom Hook
+        </NavLink>
+      </Stack>
+      <Typography variant="h6" onClick={() => handleChange(ACTION.ARRAYS)}>
+        Array Methods
+      </Typography>
+      {/* <Stack alignItems={"end"} sx={{ display: navItems.hooks ? "flex" : "none" }}> */}
+      <Stack alignItems={"end"}>
+        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/filter">
+          Filter
+        </NavLink>
+        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/map">
+          Map
+        </NavLink>
+        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/find">
+          Find
+        </NavLink>
+        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/foreach">
+          ForEach
+        </NavLink>
+        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/some">
+          Some
+        </NavLink>
+        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/every">
+          Every
+        </NavLink>
+        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/reduce">
+          reduce
+        </NavLink>
+        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/includes">
+          Includes
+        </NavLink>
+        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/splice">
+          Splice and Slice
+        </NavLink>
+        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/chaining">
+          Chaining
         </NavLink>
       </Stack>
     </Stack>
