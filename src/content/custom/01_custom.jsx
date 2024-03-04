@@ -6,7 +6,7 @@ import { CopyBlock, dracula } from "react-code-blocks";
 function ExampleCustomHook() {
   <MainLayout>
     <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-      <a href="" target="_blank" rel="noreferrer">
+      <a href="https://www.google.co.uk/" target="_blank" rel="noreferrer">
         <Typography variant="h2">Reference Custom Hooks</Typography>
       </a>
       <Stack direction={"row"}>
@@ -24,7 +24,7 @@ function ExampleCustomHook() {
               Example - connecting ids to custom elements
             </Typography>
           </Stack>
-          <a href="" target="_blank" rel="noreferrer">
+          <a href="https://www.google.co.uk/" target="_blank" rel="noreferrer">
             <Typography variant="h6" align="center">
               WDS Video on this Hook
             </Typography>

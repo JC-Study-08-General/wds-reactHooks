@@ -7,15 +7,15 @@ function ExampleEffect() {
   const [timer, setTimer] = useState(0);
   const [choice, setChoice] = useState("first");
 
-  // useEffect(() => {
-  //   const interval = setTimeout(() => {
-  //     setTimer(timer + 1);
-  //   }, 1000);
+  useEffect(() => {
+    const interval = setTimeout(() => {
+      setTimer(timer + 1);
+    }, 1000);
 
-  //   return () => {
-  //     clearTimeout(interval);
-  //   };
-  // }, [timer]);
+    return () => {
+      clearTimeout(interval);
+    };
+  }, [timer]);
 
   // 3 Examples to see how it effects useEffect
   // Example 1
