@@ -15,13 +15,13 @@ function ExampleContext() {
 
   return (
     <MainLayout>
-      <Stack justifyContent={"center"} alignItems={"center"}>
+      <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
         <a href="https://react.dev/reference/react/useContext" target="_blank" rel="noreferrer">
           <Typography variant="h2">Reference useContext</Typography>
         </a>
         <Stack direction={"row"}>
           <Box>
-            <Box sx={{ maxWidth: 800, margin: 1, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
+            <Box sx={{ maxWidth: "100%", margin: 1, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
               <List sx={{ listStyleType: "disc" }}>
                 <ListItem sx={{ display: "list-item" }}>
                   <span style={{ fontWeight: "bold" }}>useContext: </span> is wrapper to help stop prop drilling.
@@ -79,6 +79,11 @@ function ExampleContext() {
                 </Stack>
               </Stack>
             </Stack>
+            <a href="https://youtu.be/5LrDIWkK_Bc?si=enWZ_sqSlCTOAqfA" target="_blank" rel="noreferrer">
+              <Typography variant="h6" align="center">
+                WDS Video on this Hook
+              </Typography>
+            </a>
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock

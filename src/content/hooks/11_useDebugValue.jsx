@@ -9,13 +9,13 @@ function ExampleDebug() {
 
   return (
     <MainLayout>
-      <Stack justifyContent={"center"} alignItems={"center"}>
+      <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
         <a href="https://react.dev/reference/react/useDebugValue" target="_blank" rel="noreferrer">
           <Typography variant="h2">Reference useDebugValue</Typography>
         </a>
         <Stack direction={"row"}>
           <Box>
-            <Box sx={{ maxWidth: 800, margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
+            <Box sx={{ width: "100%", margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
               <List sx={{ listStyleType: "disc" }}>
                 <ListItem sx={{ display: "list-item" }}>Can only be used with 'custom hooks'.</ListItem>
                 <ListItem sx={{ display: "list-item" }}>
@@ -23,7 +23,10 @@ function ExampleDebug() {
                 </ListItem>
               </List>
             </Box>
-            <Stack alignItems={"center"} sx={{ backgroundColor: "lightblue", padding: 8, borderRadius: 15 }}>
+            <Stack
+              alignItems={"center"}
+              sx={{ width: "100%", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}
+            >
               <Box>
                 <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
               </Box>
@@ -31,6 +34,11 @@ function ExampleDebug() {
                 <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
               </Box>
             </Stack>
+            <a href="https://youtu.be/pTF86K8JZBQ?si=39EWZ137Rd1xxwia" target="_blank" rel="noreferrer">
+              <Typography variant="h6" align="center">
+                WDS Video on this Hook
+              </Typography>
+            </a>
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock
@@ -41,7 +49,7 @@ function ExampleUseDebugValue() {
   const [lastName, setLastName] = useCustomName();
 
   return (
-    <Stack alignItems={"center"} sx={{ backgroundColor: "lightblue", padding: 8, borderRadius: 15 }}>
+    <Stack alignItems={"center"} sx={{ width: "100%", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}>
       <Box>
         <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
       </Box>

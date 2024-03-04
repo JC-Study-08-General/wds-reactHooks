@@ -33,13 +33,13 @@ function ExampleReducer() {
 
   return (
     <MainLayout>
-      <Stack justifyContent={"center"} alignItems={"center"}>
+      <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
         <a href="https://react.dev/reference/react/useReducer" target="_blank" rel="noreferrer">
           <Typography variant="h2">Reference useReducer</Typography>
         </a>
         <Stack direction={"row"}>
           <Box>
-            <Box sx={{ maxWidth: 800, margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
+            <Box sx={{ width: "100%", margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
               <List sx={{ listStyleType: "disc" }}>
                 <ListItem sx={{ display: "list-item" }}>
                   useReducer is way of handling complex state and connecting the state to an action.
@@ -55,7 +55,10 @@ function ExampleReducer() {
                 </ListItem>
               </List>
             </Box>
-            <Stack alignItems={"center"} sx={{ backgroundColor: "lightblue", padding: 8, borderRadius: 15 }}>
+            <Stack
+              alignItems={"center"}
+              sx={{ width: "100%", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}
+            >
               <Stack direction={"row"} alignItems={"center"} gap={5}>
                 <Button variant="contained" onClick={decreaseCount} disabled={state.count <= 0}>
                   -
@@ -66,6 +69,11 @@ function ExampleReducer() {
                 </Button>
               </Stack>
             </Stack>
+            <a href="https://youtu.be/kK_Wqx3RnHk?si=iJ2FYudNQszY6Mf6" target="_blank" rel="noreferrer">
+              <Typography variant="h6" align="center">
+                WDS Video on this Hook
+              </Typography>
+            </a>
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock
@@ -98,7 +106,7 @@ function ExampleUseReducer() {
   }
 
   return (
-    <Stack alignItems={"center"} sx={{ backgroundColor: "lightblue", padding: 8, borderRadius: 15 }}>
+    <Stack alignItems={"center"} sx={{ width: "100%", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}>
       <Stack direction={"row"} alignItems={"center"} gap={5}>
         <Button variant="contained" onClick={decreaseCount} disabled={state.count <= 0}>
           -

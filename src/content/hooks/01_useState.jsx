@@ -31,13 +31,13 @@ function ExampleState() {
 
   return (
     <MainLayout>
-      <Stack justifyContent={"center"} alignItems={"center"}>
+      <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
         <a href="https://react.dev/reference/react/useState" target="_blank" rel="noreferrer">
           <Typography variant="h2">Reference useState</Typography>
         </a>
         <Stack direction={"row"}>
           <Box>
-            <Box sx={{ maxWidth: 800, margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
+            <Box sx={{ width: "100%", margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
               <List sx={{ listStyleType: "disc" }}>
                 <ListItem sx={{ display: "list-item" }}>
                   <span style={{ fontWeight: "bold" }}>Intailising state: </span>if use a function this will only run on
@@ -51,7 +51,10 @@ function ExampleState() {
                 </ListItem>
               </List>
             </Box>
-            <Stack alignItems={"center"} sx={{ backgroundColor: "lightblue", padding: 8, borderRadius: 15 }}>
+            <Stack
+              alignItems={"center"}
+              sx={{ width: "100%", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}
+            >
               <Typography variant="h6" sx={{ marginBottom: 5 }}>
                 Example - {stateObj.text}
               </Typography>
@@ -66,6 +69,11 @@ function ExampleState() {
                 </Button>
               </Stack>
             </Stack>
+            <a href="https://youtu.be/O6P86uwfdR0?si=YVeeH026bzh-Vbcm" target="_blank" rel="noreferrer">
+              <Typography variant="h6" align="center">
+                WDS Video on this Hook
+              </Typography>
+            </a>
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock
@@ -95,7 +103,7 @@ function ExampleUseState() {
   }
 
   return (
-    <Stack alignItems={"center"} sx={{ backgroundColor: "lightblue", padding: 8, borderRadius: 15 }}>
+    <Stack alignItems={"center"} sx={{ width: "100%", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}>
       <Typography variant="h6" sx={{ marginBottom: 5 }}>
         Example - {stateObj.text}
       </Typography>

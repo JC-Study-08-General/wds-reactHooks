@@ -36,13 +36,13 @@ function ExampleEffect() {
 
   return (
     <MainLayout>
-      <Stack justifyContent={"center"} alignItems={"center"}>
+      <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
         <a href="https://react.dev/reference/react/useEffect" target="_blank" rel="noreferrer">
           <Typography variant="h2">Reference useEffect</Typography>
         </a>
         <Stack direction={"row"}>
           <Box>
-            <Box sx={{ maxWidth: 800, margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
+            <Box sx={{ width: "100%", margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
               <List sx={{ listStyleType: "disc" }}>
                 <ListItem sx={{ display: "list-item" }}>
                   <span style={{ fontWeight: "bold" }}>Use useEffect when? </span> When page loads, Whenever something
@@ -65,7 +65,10 @@ function ExampleEffect() {
                 </ListItem>
               </List>
             </Box>
-            <Stack alignItems={"center"} sx={{ backgroundColor: "lightblue", padding: 8, borderRadius: 15 }}>
+            <Stack
+              alignItems={"center"}
+              sx={{ width: "100%", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}
+            >
               <Typography variant="h6" sx={{ marginBottom: 5 }}>
                 Timer - {timer}
               </Typography>
@@ -87,6 +90,11 @@ function ExampleEffect() {
                 </Button>
               </Stack>
             </Stack>
+            <a href="https://youtu.be/0ZJgIjIuY7U?si=wmOm3uu23JYkVpQ6" target="_blank" rel="noreferrer">
+              <Typography variant="h6" align="center">
+                WDS Video on this Hook
+              </Typography>
+            </a>
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock

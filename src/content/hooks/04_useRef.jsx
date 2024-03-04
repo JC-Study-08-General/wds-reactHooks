@@ -18,13 +18,13 @@ function ExampleRef() {
 
   return (
     <MainLayout>
-      <Stack justifyContent={"center"} alignItems={"center"}>
+      <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
         <a href="https://react.dev/reference/react/useRef" target="_blank" rel="noreferrer">
           <Typography variant="h2">Reference useRef</Typography>
         </a>
         <Stack direction={"row"}>
           <Box>
-            <Box sx={{ maxWidth: 800, margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
+            <Box sx={{ width: "100%", margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
               <List sx={{ listStyleType: "disc" }}>
                 <ListItem sx={{ display: "list-item" }}>
                   <span style={{ fontWeight: "bold" }}>Example: </span> Reference elements within the dom.
@@ -42,7 +42,10 @@ function ExampleRef() {
                 </ListItem>
               </List>
             </Box>
-            <Stack alignItems={"center"} sx={{ backgroundColor: "lightblue", padding: 8, borderRadius: 15 }}>
+            <Stack
+              alignItems={"center"}
+              sx={{ width: "100%", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}
+            >
               <input ref={inputRef} type="text" onChange={(e) => setSomething(e.target.value)} />
               <Typography variant="h6" sx={{ marginBottom: 5 }}>
                 Example - {something} and previous state was: {prevSomething.current}
@@ -53,6 +56,11 @@ function ExampleRef() {
                 </Button>
               </Stack>
             </Stack>
+            <a href="https://youtu.be/t2ypzz6gJm0?si=vvp1SrBj9mxxtLRE" target="_blank" rel="noreferrer">
+              <Typography variant="h6" align="center">
+                WDS Video on this Hook
+              </Typography>
+            </a>
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock
@@ -72,7 +80,7 @@ function ExampleUseRef() {
   }, [something]);
 
   return (
-    <Stack alignItems={"center"} sx={{ backgroundColor: "lightblue", padding: 8, borderRadius: 15 }}>
+    <Stack alignItems={"center"} sx={{ width: "100%", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}>
       <input ref={inputRef} type="text" onChange={(e) => setSomething(e.target.value)} />
       <Typography variant="h6" sx={{ marginBottom: 5 }}>
         Example - {something} and previous state was: {prevSomething.current}

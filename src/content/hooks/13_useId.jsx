@@ -6,31 +6,39 @@ import { CopyBlock, dracula } from "react-code-blocks";
 function ExampleId() {
   return (
     <MainLayout>
-      <Stack justifyContent={"center"} alignItems={"center"}>
+      <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
         <a href="https://react.dev/reference/react/useId" target="_blank" rel="noreferrer">
           <Typography variant="h2">Reference useId</Typography>
         </a>
         <Stack direction={"row"}>
           <Box>
-            <Box sx={{ maxWidth: 800, margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
+            <Box sx={{ width: "100%", margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
               <List sx={{ listStyleType: "disc" }}>
                 <ListItem sx={{ display: "list-item" }}>Used to unique id's to custom components</ListItem>
               </List>
             </Box>
-            <Stack alignItems={"center"} sx={{ backgroundColor: "lightblue", padding: 8, borderRadius: 15 }}>
+            <Stack
+              alignItems={"center"}
+              sx={{ width: "100%", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}
+            >
               <Typography variant="h6" sx={{ marginBottom: 5 }}>
                 Example - connecting ids to custom elements
               </Typography>
               <InputExample />
               <InputExample />
             </Stack>
+            <a href="https://youtu.be/_vwCKV7f_eA?si=SMB6_BYbKtGvpkC5" target="_blank" rel="noreferrer">
+              <Typography variant="h6" align="center">
+                WDS Video on this Hook
+              </Typography>
+            </a>
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock
               text={`import React, { useId } from "react";
 
   return (
-    <Stack alignItems={"center"} sx={{ backgroundColor: "lightblue", padding: 8, borderRadius: 15 }}>
+    <Stack alignItems={"center"} sx={{ width: "100%", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}>
                 <Typography variant="h6" sx={{ marginBottom: 5 }}>
                   Example - connecting ids to custom elements
                 </Typography>
