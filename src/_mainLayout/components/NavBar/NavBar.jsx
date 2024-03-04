@@ -39,7 +39,8 @@ function NavBar() {
       <Typography variant="h6" onClick={() => handleChange(ACTION.HOOKS)}>
         React Hooks
       </Typography>
-      <Stack alignItems={"end"} sx={{ display: navItems.hooks ? "flex" : "none" }}>
+      {/* <Stack alignItems={"end"} sx={{ display: navItems.hooks ? "flex" : "none" }}> */}
+      <Stack alignItems={"end"}>
         <NavLink key={`navusestate`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/hooks/usestate">
           useState
         </NavLink>
@@ -98,7 +99,11 @@ function NavBar() {
         >
           useLayoutEffect
         </NavLink>
-        <NavLink key={`navusedebug`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/usedebugvalue">
+        <NavLink
+          key={`navusedebug`}
+          className={({ isActive }) => (isActive ? "activeLink" : "")}
+          to="/hooks/usedebugvalue"
+        >
           useDebugValue
         </NavLink>
         <NavLink
