@@ -7,7 +7,7 @@ function ArraysIncludes() {
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-        <a href="" target="_blank" rel="noreferrer">
+        <a href="https://www.w3schools.com/jsref/jsref_includes.asp" target="_blank" rel="noreferrer">
           <Typography variant="h2">Reference Includes</Typography>
         </a>
         <Stack direction={"row"}>
@@ -25,7 +25,7 @@ function ArraysIncludes() {
                 Example - Test
               </Typography>
             </Stack>
-            <a href="" target="_blank" rel="noreferrer">
+            <a href="https://youtu.be/ZHsPVhkTUDg?si=o9vY_hWotmlcLgvj" target="_blank" rel="noreferrer">
               <Typography variant="h6" align="center">
                 WDS Video on this Hook
               </Typography>

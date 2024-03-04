@@ -3,12 +3,13 @@ import React from "react";
 import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 import { CopyBlock, dracula } from "react-code-blocks";
 
-function ArraysReduce() {
+function ArraysSlice() {
+  // Make sure to have examples of splice and slice
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-        <a href="https://www.w3schools.com/jsref/jsref_reduce.asp" target="_blank" rel="noreferrer">
-          <Typography variant="h2">Reference Reduce</Typography>
+        <a href="https://www.w3schools.com/jsref/jsref_slice.asp" target="_blank" rel="noreferrer">
+          <Typography variant="h2">Reference Slice</Typography>
         </a>
         <Stack direction={"row"}>
           <Box>
@@ -25,7 +26,7 @@ function ArraysReduce() {
                 Example - Test
               </Typography>
             </Stack>
-            <a href="https://youtu.be/BiblrzKMllc?si=8TzvxDZfIClQ9uik" target="_blank" rel="noreferrer">
+            <a href="https://youtu.be/5CgPaeWy4yQ?si=Pk84kGpsbLVRL-v8" target="_blank" rel="noreferrer">
               <Typography variant="h6" align="center">
                 WDS Video on this Hook
               </Typography>
@@ -47,4 +48,4 @@ function ArraysReduce() {
   );
 }
 
-export default ArraysReduce;
+export default ArraysSlice;

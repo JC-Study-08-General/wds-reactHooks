@@ -26,8 +26,9 @@ import ArraysSome from "./content/arrays/05_some";
 import ArraysEvery from "./content/arrays/06_every";
 import ArraysReduce from "./content/arrays/07_reduce";
 import ArraysIncludes from "./content/arrays/08_includes";
-import ArraysSplice from "./content/arrays/09_splice_slice";
-import ArraysChaining from "./content/arrays/10_chaining";
+import ArraysSplice from "./content/arrays/09_splice";
+import ArraysSlice from "./content/arrays/10_slice";
+import ArraysChaining from "./content/arrays/11_chaining";
 
 // useContext using a custom hooks
 import { CustomThemeProvider } from "./_custom/Custom";
@@ -67,6 +68,7 @@ function App() {
             <Route path="/arrays/reduce" element={<ArraysReduce />} />
             <Route path="/arrays/includes" element={<ArraysIncludes />} />
             <Route path="/arrays/splice" element={<ArraysSplice />} />
+            <Route path="/arrays/slice" element={<ArraysSlice />} />
             <Route path="/arrays/chaining" element={<ArraysChaining />} />
           </Routes>
         </BrowserRouter>

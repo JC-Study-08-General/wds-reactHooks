@@ -8,7 +8,11 @@ function ArraysChaining() {
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-        <a href="" target="_blank" rel="noreferrer">
+        <a
+          href="https://www.geeksforgeeks.org/chaining-of-array-methods-in-javascript/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <Typography variant="h2">Reference Chaining</Typography>
         </a>
         <Stack direction={"row"}>
@@ -26,7 +30,7 @@ function ArraysChaining() {
                 Example - Test
               </Typography>
             </Stack>
-            <a href="" target="_blank" rel="noreferrer">
+            <a href="https://youtu.be/YIp4fHeO8Rk?si=V6jMJXFjltRzNyUj" target="_blank" rel="noreferrer">
               <Typography variant="h6" align="center">
                 WDS Video on this Hook
               </Typography>

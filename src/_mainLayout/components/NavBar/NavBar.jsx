@@ -156,7 +156,10 @@ function NavBar() {
           Includes
         </NavLink>
         <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/splice">
-          Splice and Slice
+          Splice
+        </NavLink>
+        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/slice">
+          Slice
         </NavLink>
         <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/chaining">
           Chaining
