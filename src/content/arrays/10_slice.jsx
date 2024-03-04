@@ -1,4 +1,4 @@
-import { Box, List, ListItem, Stack, Typography } from "@mui/material";
+import { Box, Link, List, ListItem, Stack, Typography } from "@mui/material";
 import React from "react";
 import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 import { CopyBlock, dracula } from "react-code-blocks";
@@ -8,9 +8,9 @@ function ArraysSlice() {
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-        <a href="https://www.w3schools.com/jsref/jsref_slice.asp" target="_blank" rel="noreferrer">
+        <Link href="https://www.w3schools.com/jsref/jsref_slice.asp" target="_blank">
           <Typography variant="h2">Reference Slice</Typography>
-        </a>
+        </Link>
         <Stack direction={"row"}>
           <Box>
             <Box sx={{ width: "100%", margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
@@ -26,11 +26,11 @@ function ArraysSlice() {
                 Example - Test
               </Typography>
             </Stack>
-            <a href="https://youtu.be/5CgPaeWy4yQ?si=Pk84kGpsbLVRL-v8" target="_blank" rel="noreferrer">
+            <Link href="https://youtu.be/5CgPaeWy4yQ?si=Pk84kGpsbLVRL-v8" target="_blank">
               <Typography variant="h6" align="center">
                 WDS Video on this Hook
               </Typography>
-            </a>
+            </Link>
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock

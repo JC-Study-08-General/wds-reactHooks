@@ -1,9 +1,9 @@
-import { Box, Button, List, ListItem, Stack, Typography } from "@mui/material";
+import { Box, Button, Link, List, ListItem, Stack, Typography } from "@mui/material";
 import React, { useContext } from "react";
-import MainLayout from "../../_mainLayout/pages/MainLayoutView";
+import { CopyBlock, dracula } from "react-code-blocks";
 import { BasicThemeContext } from "../../App";
 import { CustomThemeContext } from "../../_custom/Custom";
-import { CopyBlock, dracula } from "react-code-blocks";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ExampleContext() {
   const [basicTheme, setBasicTheme] = useContext(BasicThemeContext);
@@ -16,9 +16,9 @@ function ExampleContext() {
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-        <a href="https://react.dev/reference/react/useContext" target="_blank" rel="noreferrer">
+        <Link href="https://react.dev/reference/react/useContext" target="_blank">
           <Typography variant="h2">Reference useContext</Typography>
-        </a>
+        </Link>
         <Stack direction={"row"}>
           <Box>
             <Box sx={{ maxWidth: "100%", margin: 1, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
@@ -79,11 +79,11 @@ function ExampleContext() {
                 </Stack>
               </Stack>
             </Stack>
-            <a href="https://youtu.be/5LrDIWkK_Bc?si=enWZ_sqSlCTOAqfA" target="_blank" rel="noreferrer">
+            <Link href="https://youtu.be/5LrDIWkK_Bc?si=enWZ_sqSlCTOAqfA" target="_blank">
               <Typography variant="h6" align="center">
                 WDS Video on this Hook
               </Typography>
-            </a>
+            </Link>
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock

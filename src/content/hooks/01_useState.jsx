@@ -1,7 +1,7 @@
-import { Box, Button, List, ListItem, Stack, Typography } from "@mui/material";
+import { Box, Button, Link, List, ListItem, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
-import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 import { CopyBlock, dracula } from "react-code-blocks";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ExampleState() {
   // *** Basic Example ***
@@ -32,9 +32,9 @@ function ExampleState() {
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-        <a href="https://react.dev/reference/react/useState" target="_blank" rel="noreferrer">
+        <Link href="https://react.dev/reference/react/useState" target="_blank">
           <Typography variant="h2">Reference useState</Typography>
-        </a>
+        </Link>
         <Stack direction={"row"}>
           <Box>
             <Box sx={{ width: "100%", margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
@@ -69,11 +69,11 @@ function ExampleState() {
                 </Button>
               </Stack>
             </Stack>
-            <a href="https://youtu.be/O6P86uwfdR0?si=YVeeH026bzh-Vbcm" target="_blank" rel="noreferrer">
+            <Link href="https://youtu.be/O6P86uwfdR0?si=YVeeH026bzh-Vbcm" target="_blank">
               <Typography variant="h6" align="center">
                 WDS Video on this Hook
               </Typography>
-            </a>
+            </Link>
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock

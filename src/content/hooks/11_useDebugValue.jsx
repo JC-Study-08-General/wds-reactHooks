@@ -1,4 +1,4 @@
-import { Box, List, ListItem, Stack, Typography } from "@mui/material";
+import { Box, Link, List, ListItem, Stack, Typography } from "@mui/material";
 import React, { useDebugValue, useState } from "react";
 import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 import { CopyBlock, dracula } from "react-code-blocks";
@@ -10,9 +10,9 @@ function ExampleDebug() {
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-        <a href="https://react.dev/reference/react/useDebugValue" target="_blank" rel="noreferrer">
+        <Link href="https://react.dev/reference/react/useDebugValue" target="_blank">
           <Typography variant="h2">Reference useDebugValue</Typography>
-        </a>
+        </Link>
         <Stack direction={"row"}>
           <Box>
             <Box sx={{ width: "100%", margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
@@ -34,11 +34,11 @@ function ExampleDebug() {
                 <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
               </Box>
             </Stack>
-            <a href="https://youtu.be/pTF86K8JZBQ?si=39EWZ137Rd1xxwia" target="_blank" rel="noreferrer">
+            <Link href="https://youtu.be/pTF86K8JZBQ?si=39EWZ137Rd1xxwia" target="_blank">
               <Typography variant="h6" align="center">
                 WDS Video on this Hook
               </Typography>
-            </a>
+            </Link>
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock

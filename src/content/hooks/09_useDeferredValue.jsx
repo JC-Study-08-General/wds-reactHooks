@@ -1,4 +1,4 @@
-import { Box, List, ListItem, Stack, Typography } from "@mui/material";
+import { Box, Link, List, ListItem, Stack, Typography } from "@mui/material";
 import React, { useDeferredValue, useMemo, useState } from "react";
 import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 import { CopyBlock, dracula } from "react-code-blocks";
@@ -12,9 +12,9 @@ function ExampleDeferred() {
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-        <a href="https://react.dev/reference/react/useDeferredValue" target="_blank" rel="noreferrer">
+        <Link href="https://react.dev/reference/react/useDeferredValue" target="_blank">
           <Typography variant="h2">Reference useDeferredValue</Typography>
-        </a>
+        </Link>
         <Stack direction={"row"}>
           <Box>
             <Box sx={{ width: "100%", margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
@@ -35,11 +35,11 @@ function ExampleDeferred() {
               <input type="text" value={input} onChange={handleChange} />
               <ListExample input={input} />
             </Stack>
-            <a href="https://youtu.be/jCGMedd6IWA?si=U2kjW51e6SThblcC" target="_blank" rel="noreferrer">
+            <Link href="https://youtu.be/jCGMedd6IWA?si=U2kjW51e6SThblcC" target="_blank">
               <Typography variant="h6" align="center">
                 WDS Video on this Hook
               </Typography>
-            </a>
+            </Link>
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock

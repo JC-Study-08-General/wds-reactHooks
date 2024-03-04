@@ -1,4 +1,4 @@
-import { Box, Button, List, ListItem, Stack, Typography } from "@mui/material";
+import { Box, Button, Link, List, ListItem, Stack, Typography } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import { CopyBlock, dracula } from "react-code-blocks";
 import MainLayout from "../../_mainLayout/pages/MainLayoutView";
@@ -19,9 +19,9 @@ function ExampleRef() {
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-        <a href="https://react.dev/reference/react/useRef" target="_blank" rel="noreferrer">
+        <Link href="https://react.dev/reference/react/useRef" target="_blank">
           <Typography variant="h2">Reference useRef</Typography>
-        </a>
+        </Link>
         <Stack direction={"row"}>
           <Box>
             <Box sx={{ width: "100%", margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
@@ -56,11 +56,11 @@ function ExampleRef() {
                 </Button>
               </Stack>
             </Stack>
-            <a href="https://youtu.be/t2ypzz6gJm0?si=vvp1SrBj9mxxtLRE" target="_blank" rel="noreferrer">
+            <Link href="https://youtu.be/t2ypzz6gJm0?si=vvp1SrBj9mxxtLRE" target="_blank">
               <Typography variant="h6" align="center">
                 WDS Video on this Hook
               </Typography>
-            </a>
+            </Link>
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock

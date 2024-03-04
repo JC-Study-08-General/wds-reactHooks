@@ -1,7 +1,7 @@
-import { Box, Button, List, ListItem, Stack, TextField, Typography } from "@mui/material";
-import React, { useState, useEffect, useCallback } from "react";
-import MainLayout from "../../_mainLayout/pages/MainLayoutView";
+import { Box, Button, Link, List, ListItem, Stack, TextField, Typography } from "@mui/material";
+import React, { useCallback, useEffect, useState } from "react";
 import { CopyBlock, dracula } from "react-code-blocks";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ExampleCallback() {
   const [something, setSomething] = useState(1);
@@ -14,9 +14,9 @@ function ExampleCallback() {
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-        <a href="https://react.dev/reference/react/useCallback" target="_blank" rel="noreferrer">
+        <Link href="https://react.dev/reference/react/useCallback" target="_blank">
           <Typography variant="h2">Reference useCallback</Typography>
-        </a>
+        </Link>
         <Stack direction={"row"}>
           <Box>
             <Box sx={{ width: "100%", margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
@@ -55,11 +55,11 @@ function ExampleCallback() {
                 <ListExample getItems={example} />
               </Box>
             </Stack>
-            <a href="https://youtu.be/_AyFP5s69N4?si=l48zCYaDPdtESTRB" target="_blank" rel="noreferrer">
+            <Link href="https://youtu.be/_AyFP5s69N4?si=l48zCYaDPdtESTRB" target="_blank">
               <Typography variant="h6" align="center">
                 WDS Video on this Hook
               </Typography>
-            </a>
+            </Link>
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock

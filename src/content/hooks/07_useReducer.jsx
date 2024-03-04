@@ -1,7 +1,7 @@
-import { Box, Button, List, ListItem, Stack, Typography } from "@mui/material";
+import { Box, Button, Link, List, ListItem, Stack, Typography } from "@mui/material";
 import React, { useReducer } from "react";
-import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 import { CopyBlock, dracula } from "react-code-blocks";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 // This is all in capitals because it is a global none changing variable
 const ACTION = {
@@ -34,9 +34,9 @@ function ExampleReducer() {
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-        <a href="https://react.dev/reference/react/useReducer" target="_blank" rel="noreferrer">
+        <Link href="https://react.dev/reference/react/useReducer" target="_blank">
           <Typography variant="h2">Reference useReducer</Typography>
-        </a>
+        </Link>
         <Stack direction={"row"}>
           <Box>
             <Box sx={{ width: "100%", margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
@@ -69,11 +69,11 @@ function ExampleReducer() {
                 </Button>
               </Stack>
             </Stack>
-            <a href="https://youtu.be/kK_Wqx3RnHk?si=iJ2FYudNQszY6Mf6" target="_blank" rel="noreferrer">
+            <Link href="https://youtu.be/kK_Wqx3RnHk?si=iJ2FYudNQszY6Mf6" target="_blank">
               <Typography variant="h6" align="center">
                 WDS Video on this Hook
               </Typography>
-            </a>
+            </Link>
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock
