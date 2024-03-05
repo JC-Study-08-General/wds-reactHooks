@@ -1,9 +1,19 @@
 import { Box, Link, List, ListItem, Stack, Typography } from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 import { CopyBlock, dracula } from "react-code-blocks";
+import { getTodos } from "../../_connections/connections";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ArraysSome() {
+  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+
+  let matched = false;
+
+  if (status === "success") {
+    matched = todos.some((t) => t.id === 28);
+  }
+
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
@@ -23,7 +33,12 @@ function ArraysSome() {
               }}
             >
               <List sx={{ listStyleType: "disc" }}>
-                <ListItem sx={{ display: "list-item" }}>Test</ListItem>
+                <ListItem sx={{ display: "list-item" }}>
+                  Returns a boolean response if a value in the arrays meets the criteria.
+                </ListItem>
+                <ListItem sx={{ display: "list-item" }}>
+                  Once matched found it returns true and stops iterating through the array.
+                </ListItem>
               </List>
             </Box>
             <Stack
@@ -38,7 +53,7 @@ function ArraysSome() {
               }}
             >
               <Typography variant="h6" sx={{ marginBottom: 5 }}>
-                Example - Test
+                Example - id 28 {matched ? "Exists" : "Missing"}
               </Typography>
             </Stack>
             <Link href="https://youtu.be/BiblrzKMllc?si=8TzvxDZfIClQ9uik" target="_blank">
@@ -49,7 +64,15 @@ function ArraysSome() {
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock
-              text={``}
+              text={`
+  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+
+  let matched = false;
+
+  if (status === "success") {
+    matched = todos.some((t) => t.id === 28);
+  }
+              `}
               language={"javascript"}
               showLineNumbers={false}
               theme={dracula}

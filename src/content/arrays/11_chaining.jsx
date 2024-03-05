@@ -1,10 +1,20 @@
 import { Box, Link, List, ListItem, Stack, Typography } from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 import { CopyBlock, dracula } from "react-code-blocks";
+import { getTodos } from "../../_connections/connections";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ArraysChaining() {
-  // Make sure to have examples of splice and slice
+  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+
+  function top10Todos() {
+    return todos
+      .filter((t, i) => i < 10)
+      .map((n) => n.title)
+      .sort();
+  }
+
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
@@ -24,7 +34,11 @@ function ArraysChaining() {
               }}
             >
               <List sx={{ listStyleType: "disc" }}>
-                <ListItem sx={{ display: "list-item" }}>Test</ListItem>
+                <ListItem sx={{ display: "list-item" }}>This is a process of combining methods.</ListItem>
+                <ListItem sx={{ display: "list-item", color: "firebrick" }}>
+                  Thought should be given to whether this is the appropriate approach and if conseals logic for code
+                  reviews, sometimes more code is better.
+                </ListItem>
               </List>
             </Box>
             <Stack
@@ -39,8 +53,11 @@ function ArraysChaining() {
               }}
             >
               <Typography variant="h6" sx={{ marginBottom: 5 }}>
-                Example - Test
+                Example - List of top 10 todos in alphebetical order:
               </Typography>
+              {top10Todos().map((todo) => (
+                <Typography>- {todo}</Typography>
+              ))}
             </Stack>
             <Link href="https://youtu.be/YIp4fHeO8Rk?si=V6jMJXFjltRzNyUj" target="_blank">
               <Typography variant="h6" align="center">
@@ -50,7 +67,17 @@ function ArraysChaining() {
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock
-              text={``}
+              text={`
+  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+
+  function top10Todos() {
+    return todos
+      .filter((t, i) => i < 10)
+      .map((n) => n.title)
+      .sort();
+  }
+
+              `}
               language={"javascript"}
               showLineNumbers={false}
               theme={dracula}

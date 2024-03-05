@@ -85,6 +85,8 @@ function ArraysMap() {
           <Box sx={{ margin: 5 }}>
             <CopyBlock
               text={`
+  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+
   // This will mutate the original
   if (status === "success") {
     const newArr = todos.map((a, i) => {

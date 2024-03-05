@@ -1,9 +1,20 @@
 import { Box, Link, List, ListItem, Stack, Typography } from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 import { CopyBlock, dracula } from "react-code-blocks";
+import { getTodos } from "../../_connections/connections";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ArraysReduce() {
+  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+
+  let sumOfIds = 0;
+
+  if (status === "success") {
+    sumOfIds = todos.reduce((accumulator, t) => accumulator + t.id, 0);
+    console.log(sumOfIds);
+  }
+
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
@@ -23,7 +34,12 @@ function ArraysReduce() {
               }}
             >
               <List sx={{ listStyleType: "disc" }}>
-                <ListItem sx={{ display: "list-item" }}>Test</ListItem>
+                <ListItem sx={{ display: "list-item" }}>Method returns a single value.</ListItem>
+                <ListItem sx={{ display: "list-item" }}>
+                  Takes in 2 elements, first inital value, second the element. Plus outside of the callback add ,
+                  initial value.
+                </ListItem>
+                <ListItem sx={{ display: "list-item" }}>method executes a reducer function for array element.</ListItem>
               </List>
             </Box>
             <Stack
@@ -38,7 +54,7 @@ function ArraysReduce() {
               }}
             >
               <Typography variant="h6" sx={{ marginBottom: 5 }}>
-                Example - Test
+                Example - Sum of the id numbers is: {sumOfIds}
               </Typography>
             </Stack>
             <Link href="https://youtu.be/BiblrzKMllc?si=8TzvxDZfIClQ9uik" target="_blank">
@@ -49,7 +65,16 @@ function ArraysReduce() {
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock
-              text={``}
+              text={`
+const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+
+let sumOfIds = 0;
+
+if (status === "success") {
+  sumOfIds = todos.reduce((accumulator, t) => accumulator + t.id, 0);
+  console.log(sumOfIds);
+}
+              `}
               language={"javascript"}
               showLineNumbers={false}
               theme={dracula}

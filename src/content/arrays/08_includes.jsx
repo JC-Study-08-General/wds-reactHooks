@@ -1,9 +1,21 @@
 import { Box, Link, List, ListItem, Stack, Typography } from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 import { CopyBlock, dracula } from "react-code-blocks";
+import { getTodos } from "../../_connections/connections";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ArraysIncludes() {
+  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+
+  let matched = false;
+
+  if (status === "success") {
+    const todoIds = todos.map((t) => t.id);
+    console.log(todoIds);
+    matched = todoIds.includes(28);
+  }
+
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
@@ -23,7 +35,10 @@ function ArraysIncludes() {
               }}
             >
               <List sx={{ listStyleType: "disc" }}>
-                <ListItem sx={{ display: "list-item" }}>Test</ListItem>
+                <ListItem sx={{ display: "list-item" }}>
+                  Includes works the same as some except 'some' takes a callback!
+                </ListItem>
+                <ListItem sx={{ display: "list-item" }}>Includes just specify what you are looking for!</ListItem>
               </List>
             </Box>
             <Stack
@@ -38,7 +53,7 @@ function ArraysIncludes() {
               }}
             >
               <Typography variant="h6" sx={{ marginBottom: 5 }}>
-                Example - Test
+                Example - id 28 {matched ? "Exists" : "Missing"}
               </Typography>
             </Stack>
             <Link href="https://youtu.be/ZHsPVhkTUDg?si=o9vY_hWotmlcLgvj" target="_blank">
@@ -49,7 +64,17 @@ function ArraysIncludes() {
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock
-              text={``}
+              text={`
+  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+
+  let matched = false;
+
+  if (status === "success") {
+    const todoIds = todos.map((t) => t.id);
+    console.log(todoIds);
+    matched = todoIds.includes(28);
+  }
+              `}
               language={"javascript"}
               showLineNumbers={false}
               theme={dracula}

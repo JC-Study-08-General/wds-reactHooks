@@ -1,9 +1,20 @@
 import { Box, Link, List, ListItem, Stack, Typography } from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 import { CopyBlock, dracula } from "react-code-blocks";
+import { getTodos } from "../../_connections/connections";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ArraysForEach() {
+  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+
+  let sum = 0;
+
+  if (status === "success") {
+    todos.forEach((t) => sum++);
+    console.log(sum);
+  }
+
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
@@ -42,7 +53,7 @@ function ArraysForEach() {
               }}
             >
               <Typography variant="h6" sx={{ marginBottom: 5 }}>
-                Example - Test
+                Example - Number of todos {sum}
               </Typography>
             </Stack>
             <Link href="https://youtu.be/BiblrzKMllc?si=8TzvxDZfIClQ9uik" target="_blank">
@@ -53,7 +64,15 @@ function ArraysForEach() {
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock
-              text={``}
+              text={`
+const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+
+if (status === "success") {
+  let sum = 0;
+  todos.forEach((t) => sum++);
+  console.log(sum);
+}
+              `}
               language={"javascript"}
               showLineNumbers={false}
               theme={dracula}

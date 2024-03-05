@@ -1,14 +1,23 @@
 import { Box, Link, List, ListItem, Stack, Typography } from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 import { CopyBlock, dracula } from "react-code-blocks";
+import { getTodos } from "../../_connections/connections";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ArraysSlice() {
-  // Make sure to have examples of splice and slice
+  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+
+  let refactoredTitle = "";
+
+  if (status === "success") {
+    refactoredTitle = todos[0].title.slice(0, 10);
+  }
+
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-        <Link href="https://www.w3schools.com/jsref/jsref_slice.asp" target="_blank">
+        <Link href="https://www.w3schools.com/jsref/jsref_slice_string.asp" target="_blank">
           <Typography variant="h2">Reference Slice</Typography>
         </Link>
         <Stack direction={"row"}>
@@ -24,7 +33,9 @@ function ArraysSlice() {
               }}
             >
               <List sx={{ listStyleType: "disc" }}>
-                <ListItem sx={{ display: "list-item" }}>Test</ListItem>
+                <ListItem sx={{ display: "list-item" }}>method extracts a part of a string</ListItem>
+                <ListItem sx={{ display: "list-item" }}>method returns the extracted part in a new string.</ListItem>
+                <ListItem sx={{ display: "list-item" }}>method does not change the original string.</ListItem>
               </List>
             </Box>
             <Stack
@@ -39,7 +50,10 @@ function ArraysSlice() {
               }}
             >
               <Typography variant="h6" sx={{ marginBottom: 5 }}>
-                Example - Test
+                Example - The first 10 charators of the first todo title: {refactoredTitle}
+              </Typography>
+              <Typography variant="h6" sx={{ marginBottom: 5 }}>
+                Example - The todo title: {todos[0].title}
               </Typography>
             </Stack>
             <Link href="https://youtu.be/5CgPaeWy4yQ?si=Pk84kGpsbLVRL-v8" target="_blank">
@@ -50,7 +64,15 @@ function ArraysSlice() {
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock
-              text={``}
+              text={`
+  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+
+  const refactoredTitle = ''
+
+  if (status === "success") {
+     refactoredTitle = todos[0].title.slice(0, 10);
+  }
+              `}
               language={"javascript"}
               showLineNumbers={false}
               theme={dracula}

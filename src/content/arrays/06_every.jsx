@@ -1,9 +1,19 @@
 import { Box, Link, List, ListItem, Stack, Typography } from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 import { CopyBlock, dracula } from "react-code-blocks";
+import { getTodos } from "../../_connections/connections";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ArraysEvery() {
+  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+
+  let checked = false;
+
+  if (status === "success") {
+    checked = todos.every((t) => t.id);
+  }
+
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
@@ -23,7 +33,12 @@ function ArraysEvery() {
               }}
             >
               <List sx={{ listStyleType: "disc" }}>
-                <ListItem sx={{ display: "list-item" }}>Test</ListItem>
+                <ListItem sx={{ display: "list-item" }}>
+                  Returns a boolean response if a value in the arrays meets the criteria.
+                </ListItem>
+                <ListItem sx={{ display: "list-item" }}>
+                  This will run for every element of the array as all have to true or false.
+                </ListItem>
               </List>
             </Box>
             <Stack
@@ -38,7 +53,7 @@ function ArraysEvery() {
               }}
             >
               <Typography variant="h6" sx={{ marginBottom: 5 }}>
-                Example - Test
+                Example - Does every todo have an id? {checked ? "Yes" : "No"}
               </Typography>
             </Stack>
             <Link href="https://youtu.be/BiblrzKMllc?si=8TzvxDZfIClQ9uik" target="_blank">
@@ -49,7 +64,15 @@ function ArraysEvery() {
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock
-              text={``}
+              text={`
+const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+
+let checked = false;
+
+if (status === "success") {
+  checked = todos.every((t) => t.id);
+}
+              `}
               language={"javascript"}
               showLineNumbers={false}
               theme={dracula}

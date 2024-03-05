@@ -1,10 +1,23 @@
 import { Box, Link, List, ListItem, Stack, Typography } from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 import { CopyBlock, dracula } from "react-code-blocks";
+import { getTodos } from "../../_connections/connections";
+import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ArraysSplice() {
-  // Make sure to have examples of splice and slice
+  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+
+  if (status === "success") {
+    // Add to array
+    todos.splice(1, 0, { title: "test" });
+    console.log(todos);
+
+    // remove from array
+    todos.splice(1, 1);
+    console.log(todos);
+  }
+
   return (
     <MainLayout>
       <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
@@ -24,7 +37,12 @@ function ArraysSplice() {
               }}
             >
               <List sx={{ listStyleType: "disc" }}>
-                <ListItem sx={{ display: "list-item" }}>Test</ListItem>
+                <ListItem sx={{ display: "list-item" }}>method adds and/or removes array elements.</ListItem>
+                <ListItem sx={{ display: "list-item" }}>method overwrites the original array!</ListItem>
+                <ListItem sx={{ display: "list-item", color: "firebrick" }}>
+                  This is important to remember that the add does add if 0 in second parameter, if greater than 1 it
+                  will delete before adding.
+                </ListItem>
               </List>
             </Box>
             <Stack
@@ -39,7 +57,7 @@ function ArraysSplice() {
               }}
             >
               <Typography variant="h6" sx={{ marginBottom: 5 }}>
-                Example - Test
+                Example - None just look at the code.
               </Typography>
             </Stack>
             <Link href="https://youtu.be/FFas8cMHVwg?si=CtNp2UvWTOQAtnAL" target="_blank">
@@ -50,7 +68,19 @@ function ArraysSplice() {
           </Box>
           <Box sx={{ margin: 5 }}>
             <CopyBlock
-              text={``}
+              text={`
+  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+
+  if (status === "success") {
+    // Add to array
+    todos.splice(1, 0, { title: "test" });
+    console.log(todos);
+
+    // remove from array
+    todos.splice(1, 1);
+    console.log(todos);
+  }
+              `}
               language={"javascript"}
               showLineNumbers={false}
               theme={dracula}
