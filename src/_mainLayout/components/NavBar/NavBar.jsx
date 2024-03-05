@@ -122,7 +122,11 @@ function NavBar() {
       </Typography>
       {/* <Stack alignItems={"end"} sx={{ display: navItems.hooks ? "flex" : "none" }}> */}
       <Stack alignItems={"end"}>
-        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/custom/customhook">
+        <NavLink
+          key={`customHook`}
+          className={({ isActive }) => (isActive ? "activeLink" : "")}
+          to="/custom/customhook"
+        >
           Custom Hook
         </NavLink>
       </Stack>
@@ -131,37 +135,45 @@ function NavBar() {
       </Typography>
       {/* <Stack alignItems={"end"} sx={{ display: navItems.hooks ? "flex" : "none" }}> */}
       <Stack alignItems={"end"}>
-        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/filter">
+        <NavLink key={`arr_filter`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/filter">
           Filter
         </NavLink>
-        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/map">
+        <NavLink key={`arr_map`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/map">
           Map
         </NavLink>
-        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/find">
+        <NavLink key={`arr_find`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/find">
           Find
         </NavLink>
-        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/foreach">
+        <NavLink key={`arr_foreach`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/foreach">
           ForEach
         </NavLink>
-        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/some">
+        <NavLink key={`arr_some`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/some">
           Some
         </NavLink>
-        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/every">
+        <NavLink key={`arr_every`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/every">
           Every
         </NavLink>
-        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/reduce">
+        <NavLink key={`arr_reduce`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/reduce">
           reduce
         </NavLink>
-        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/includes">
+        <NavLink
+          key={`arr_inclides`}
+          className={({ isActive }) => (isActive ? "activeLink" : "")}
+          to="/arrays/includes"
+        >
           Includes
         </NavLink>
-        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/splice">
+        <NavLink key={`arr_splice`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/splice">
           Splice
         </NavLink>
-        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/slice">
+        <NavLink key={`arr_slice`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/slice">
           Slice
         </NavLink>
-        <NavLink key={`navuseid`} className={({ isActive }) => (isActive ? "activeLink" : "")} to="/arrays/chaining">
+        <NavLink
+          key={`arr_chaining`}
+          className={({ isActive }) => (isActive ? "activeLink" : "")}
+          to="/arrays/chaining"
+        >
           Chaining
         </NavLink>
       </Stack>

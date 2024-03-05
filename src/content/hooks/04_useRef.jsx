@@ -24,7 +24,16 @@ function ExampleRef() {
         </Link>
         <Stack direction={"row"}>
           <Box>
-            <Box sx={{ width: "100%", margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
+            <Box
+              sx={{
+                width: "100%",
+                maxWidth: "40dvw",
+                margin: 2,
+                backgroundColor: "bisque",
+                padding: 7,
+                borderRadius: 15,
+              }}
+            >
               <List sx={{ listStyleType: "disc" }}>
                 <ListItem sx={{ display: "list-item" }}>
                   <span style={{ fontWeight: "bold" }}>Example: </span> Reference elements within the dom.
@@ -44,7 +53,14 @@ function ExampleRef() {
             </Box>
             <Stack
               alignItems={"center"}
-              sx={{ width: "100%", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}
+              sx={{
+                width: "100%",
+                maxWidth: "40dvw",
+                margin: 2,
+                backgroundColor: "lightblue",
+                padding: 7,
+                borderRadius: 15,
+              }}
             >
               <input ref={inputRef} type="text" onChange={(e) => setSomething(e.target.value)} />
               <Typography variant="h6" sx={{ marginBottom: 5 }}>
@@ -80,7 +96,7 @@ function ExampleUseRef() {
   }, [something]);
 
   return (
-    <Stack alignItems={"center"} sx={{ width: "100%", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}>
+    <Stack alignItems={"center"} sx={{ width: "100%", maxWidth: "40dvw", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}>
       <input ref={inputRef} type="text" onChange={(e) => setSomething(e.target.value)} />
       <Typography variant="h6" sx={{ marginBottom: 5 }}>
         Example - {something} and previous state was: {prevSomething.current}

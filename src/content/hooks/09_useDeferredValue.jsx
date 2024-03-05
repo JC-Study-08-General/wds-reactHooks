@@ -17,7 +17,16 @@ function ExampleDeferred() {
         </Link>
         <Stack direction={"row"}>
           <Box>
-            <Box sx={{ width: "100%", margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
+            <Box
+              sx={{
+                width: "100%",
+                maxWidth: "40dvw",
+                margin: 2,
+                backgroundColor: "bisque",
+                padding: 7,
+                borderRadius: 15,
+              }}
+            >
               <List sx={{ listStyleType: "disc" }}>
                 <ListItem sx={{ display: "list-item" }}>Used to for slow apps, but use sparingly</ListItem>
                 <ListItem sx={{ display: "list-item" }}>
@@ -30,7 +39,14 @@ function ExampleDeferred() {
             </Box>
             <Stack
               alignItems={"center"}
-              sx={{ width: "100%", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}
+              sx={{
+                width: "100%",
+                maxWidth: "40dvw",
+                margin: 2,
+                backgroundColor: "lightblue",
+                padding: 7,
+                borderRadius: 15,
+              }}
             >
               <input type="text" value={input} onChange={handleChange} />
               <ListExample input={input} />
@@ -53,7 +69,7 @@ function ExampleUseDeferredValue() {
   }
 
   return (
-    <Stack alignItems={"center"} sx={{ width: "100%", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}>
+    <Stack alignItems={"center"} sx={{ width: "100%", maxWidth: "40dvw", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}>
       <input type="text" value={input} onChange={handleChange} />
       <ListExample input={input} />
     </Stack>

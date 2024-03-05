@@ -15,7 +15,16 @@ function ExampleDebug() {
         </Link>
         <Stack direction={"row"}>
           <Box>
-            <Box sx={{ width: "100%", margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
+            <Box
+              sx={{
+                width: "100%",
+                maxWidth: "40dvw",
+                margin: 2,
+                backgroundColor: "bisque",
+                padding: 7,
+                borderRadius: 15,
+              }}
+            >
               <List sx={{ listStyleType: "disc" }}>
                 <ListItem sx={{ display: "list-item" }}>Can only be used with 'custom hooks'.</ListItem>
                 <ListItem sx={{ display: "list-item" }}>
@@ -25,7 +34,14 @@ function ExampleDebug() {
             </Box>
             <Stack
               alignItems={"center"}
-              sx={{ width: "100%", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}
+              sx={{
+                width: "100%",
+                maxWidth: "40dvw",
+                margin: 2,
+                backgroundColor: "lightblue",
+                padding: 7,
+                borderRadius: 15,
+              }}
             >
               <Box>
                 <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
@@ -49,7 +65,7 @@ function ExampleUseDebugValue() {
   const [lastName, setLastName] = useCustomName();
 
   return (
-    <Stack alignItems={"center"} sx={{ width: "100%", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}>
+    <Stack alignItems={"center"} sx={{ width: "100%", maxWidth: "40dvw", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}>
       <Box>
         <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
       </Box>

@@ -5,6 +5,15 @@ const jsonPlaceholder = axios.create({ baseURL: "https://jsonplaceholder.typicod
 export const getTodos = async () => {
   return await jsonPlaceholder
     .get("/todos")
-    .then((res) => res)
+    .then((res) => res.data)
     .catch((err) => err);
 };
+
+export const getUsers = async () => {
+  return await jsonPlaceholder
+    .get("/users")
+    .then((res) => res.data.data)
+    .catch((err) => err);
+};
+
+export default getTodos;

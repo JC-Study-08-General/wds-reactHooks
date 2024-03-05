@@ -23,7 +23,16 @@ function ExampleLayout() {
         </Link>
         <Stack direction={"row"}>
           <Box>
-            <Box sx={{ width: "100%", margin: 2, backgroundColor: "bisque", padding: 7, borderRadius: 15 }}>
+            <Box
+              sx={{
+                width: "100%",
+                maxWidth: "40dvw",
+                margin: 2,
+                backgroundColor: "bisque",
+                padding: 7,
+                borderRadius: 15,
+              }}
+            >
               <List sx={{ listStyleType: "disc" }}>
                 <ListItem sx={{ display: "list-item" }}>useLayoutEffect is an alternative to useEffect</ListItem>
                 <ListItem sx={{ display: "list-item" }}>
@@ -40,7 +49,14 @@ function ExampleLayout() {
             </Box>
             <Stack
               alignItems={"center"}
-              sx={{ width: "100%", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}
+              sx={{
+                width: "100%",
+                maxWidth: "40dvw",
+                margin: 2,
+                backgroundColor: "lightblue",
+                padding: 7,
+                borderRadius: 15,
+              }}
             >
               <Stack direction={"column"} alignItems={"center"} gap={5}>
                 <Button variant="contained" ref={btn} onClick={() => setShow((p) => !p)}>
@@ -76,7 +92,7 @@ function ExampleUseLayoutEffect() {
   }, [show]);
 
   return (
-    <Stack alignItems={"center"} sx={{ width: "100%", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}>
+    <Stack alignItems={"center"} sx={{ width: "100%", maxWidth: "40dvw", margin: 2, backgroundColor: "lightblue", padding: 7, borderRadius: 15 }}>
       <Stack direction={"column"} alignItems={"center"} gap={5}>
         <Button variant="contained" ref={btn} onClick={() => setShow((p) => !p)}>
           Example
