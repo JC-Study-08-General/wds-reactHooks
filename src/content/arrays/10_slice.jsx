@@ -6,7 +6,10 @@ import { getTodos } from "../../_connections/connections";
 import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ArraysSlice() {
-  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+  const { data: todos, status } = useQuery({
+    queryKey: ["todos"],
+    queryFn: getTodos,
+  });
 
   let refactoredTitle = "";
 
@@ -17,8 +20,14 @@ function ArraysSlice() {
   return (
     <MainLayout>
       {status === "success" && (
-        <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-          <Link href="https://www.w3schools.com/jsref/jsref_slice_string.asp" target="_blank">
+        <Stack
+          alignItems={"center"}
+          sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}
+        >
+          <Link
+            href="https://www.w3schools.com/jsref/jsref_slice_string.asp"
+            target="_blank"
+          >
             <Typography variant="h2">Reference Slice</Typography>
           </Link>
           <Stack direction={"row"}>
@@ -34,9 +43,25 @@ function ArraysSlice() {
                 }}
               >
                 <List sx={{ listStyleType: "disc" }}>
-                  <ListItem sx={{ display: "list-item" }}>method extracts a part of a string</ListItem>
-                  <ListItem sx={{ display: "list-item" }}>method returns the extracted part in a new string.</ListItem>
-                  <ListItem sx={{ display: "list-item" }}>method does not change the original string.</ListItem>
+                  <ListItem sx={{ display: "list-item" }}>
+                    method extracts a part of a string
+                  </ListItem>
+                  <ListItem sx={{ display: "list-item" }}>
+                    method returns the extracted part in a new string.
+                  </ListItem>
+                  <ListItem sx={{ display: "list-item" }}>
+                    method does not change the original string.
+                  </ListItem>
+                  <ListItem sx={{ display: "list-item" }}>
+                    <Link
+                      href="https://www.w3schools.com/jsref/jsref_slice_array.asp"
+                      target="_blank"
+                    >
+                      <Typography>
+                        W3Schools Documentation Array Slice
+                      </Typography>
+                    </Link>
+                  </ListItem>
                 </List>
               </Box>
               <Stack
@@ -51,13 +76,17 @@ function ArraysSlice() {
                 }}
               >
                 <Typography variant="h6" sx={{ marginBottom: 5 }}>
-                  Example - The first 10 charators of the first todo title: {refactoredTitle}
+                  Example - The first 10 charators of the first todo title:{" "}
+                  {refactoredTitle}
                 </Typography>
                 <Typography variant="h6" sx={{ marginBottom: 5 }}>
                   Example - The todo title: {todos[0].title}
                 </Typography>
               </Stack>
-              <Link href="https://youtu.be/5CgPaeWy4yQ?si=Pk84kGpsbLVRL-v8" target="_blank">
+              <Link
+                href="https://youtu.be/5CgPaeWy4yQ?si=Pk84kGpsbLVRL-v8"
+                target="_blank"
+              >
                 <Typography variant="h6" align="center">
                   WDS Video on this Hook
                 </Typography>
@@ -66,13 +95,14 @@ function ArraysSlice() {
             <Box sx={{ margin: 5 }}>
               <CopyBlock
                 text={`
-  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((response) => response.json())
+  .then((todos) => {
+    let refactoredTitle = "";
 
-  const refactoredTitle = ''
-
-  if (status === "success") {
-     refactoredTitle = todos[0].title.slice(0, 10);
-  }
+    refactoredTitle = todos[0].title.slice(0, 10);
+    console.log(todos, refactoredTitle);
+  });
               `}
                 language={"javascript"}
                 showLineNumbers={false}

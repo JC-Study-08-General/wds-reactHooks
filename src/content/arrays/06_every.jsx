@@ -6,7 +6,10 @@ import { getTodos } from "../../_connections/connections";
 import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ArraysEvery() {
-  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+  const { data: todos, status } = useQuery({
+    queryKey: ["todos"],
+    queryFn: getTodos,
+  });
 
   let checked = false;
 
@@ -17,8 +20,14 @@ function ArraysEvery() {
   return (
     <MainLayout>
       {status === "success" && (
-        <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-          <Link href="https://www.w3schools.com/jsref/jsref_every.asp" target="_blank">
+        <Stack
+          alignItems={"center"}
+          sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}
+        >
+          <Link
+            href="https://www.w3schools.com/jsref/jsref_every.asp"
+            target="_blank"
+          >
             <Typography variant="h2">Reference Every</Typography>
           </Link>
           <Stack direction={"row"}>
@@ -35,10 +44,22 @@ function ArraysEvery() {
               >
                 <List sx={{ listStyleType: "disc" }}>
                   <ListItem sx={{ display: "list-item" }}>
-                    Returns a boolean response if a value in the arrays meets the criteria.
+                    Returns a boolean response if a value in the arrays meets
+                    the criteria.
                   </ListItem>
                   <ListItem sx={{ display: "list-item" }}>
-                    This will run for every element of the array as all have to true or false.
+                    This will run for every element of the array as all have to
+                    true or false.
+                  </ListItem>
+                  <ListItem sx={{ display: "list-item" }}>
+                    <Link
+                      href="https://www.w3schools.com/jsref/jsref_every.asp"
+                      target="_blank"
+                    >
+                      <Typography>
+                        W3Schools Documentation Array Every
+                      </Typography>
+                    </Link>
                   </ListItem>
                 </List>
               </Box>
@@ -57,7 +78,10 @@ function ArraysEvery() {
                   Example - Does every todo have an id? {checked ? "Yes" : "No"}
                 </Typography>
               </Stack>
-              <Link href="https://youtu.be/BiblrzKMllc?si=8TzvxDZfIClQ9uik" target="_blank">
+              <Link
+                href="https://youtu.be/BiblrzKMllc?si=8TzvxDZfIClQ9uik"
+                target="_blank"
+              >
                 <Typography variant="h6" align="center">
                   WDS Video on this Hook
                 </Typography>
@@ -66,13 +90,14 @@ function ArraysEvery() {
             <Box sx={{ margin: 5 }}>
               <CopyBlock
                 text={`
-const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((response) => response.json())
+  .then((todos) => {
+    let checked = false;    
 
-let checked = false;
-
-if (status === "success") {
-  checked = todos.every((t) => t.id);
-}
+    checked = todos.every((t) => t.id);
+    console.log(todos, checked);
+  });
               `}
                 language={"javascript"}
                 showLineNumbers={false}

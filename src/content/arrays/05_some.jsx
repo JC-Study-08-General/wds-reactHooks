@@ -6,7 +6,10 @@ import { getTodos } from "../../_connections/connections";
 import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ArraysSome() {
-  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+  const { data: todos, status } = useQuery({
+    queryKey: ["todos"],
+    queryFn: getTodos,
+  });
 
   let matched = false;
 
@@ -17,8 +20,14 @@ function ArraysSome() {
   return (
     <MainLayout>
       {status === "success" && (
-        <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-          <Link href="https://www.w3schools.com/jsref/jsref_some.asp" target="_blank">
+        <Stack
+          alignItems={"center"}
+          sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}
+        >
+          <Link
+            href="https://www.w3schools.com/jsref/jsref_some.asp"
+            target="_blank"
+          >
             <Typography variant="h2">Reference Some</Typography>
           </Link>
           <Stack direction={"row"}>
@@ -35,10 +44,22 @@ function ArraysSome() {
               >
                 <List sx={{ listStyleType: "disc" }}>
                   <ListItem sx={{ display: "list-item" }}>
-                    Returns a boolean response if a value in the arrays meets the criteria.
+                    Returns a boolean response if a value in the arrays meets
+                    the criteria.
                   </ListItem>
                   <ListItem sx={{ display: "list-item" }}>
-                    Once matched found it returns true and stops iterating through the array.
+                    Once matched found it returns true and stops iterating
+                    through the array.
+                  </ListItem>
+                  <ListItem sx={{ display: "list-item" }}>
+                    <Link
+                      href="https://www.w3schools.com/jsref/jsref_some.asp"
+                      target="_blank"
+                    >
+                      <Typography>
+                        W3Schools Documentation Array Some
+                      </Typography>
+                    </Link>
                   </ListItem>
                 </List>
               </Box>
@@ -57,7 +78,10 @@ function ArraysSome() {
                   Example - id 28 {matched ? "Exists" : "Missing"}
                 </Typography>
               </Stack>
-              <Link href="https://youtu.be/BiblrzKMllc?si=8TzvxDZfIClQ9uik" target="_blank">
+              <Link
+                href="https://youtu.be/BiblrzKMllc?si=8TzvxDZfIClQ9uik"
+                target="_blank"
+              >
                 <Typography variant="h6" align="center">
                   WDS Video on this Hook
                 </Typography>
@@ -66,13 +90,14 @@ function ArraysSome() {
             <Box sx={{ margin: 5 }}>
               <CopyBlock
                 text={`
-  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((response) => response.json())
+  .then((todos) => {
+    let matched = false;   
 
-  let matched = false;
-
-  if (status === "success") {
     matched = todos.some((t) => t.id === 28);
-  }
+    console.log(todos, matched);
+  });
               `}
                 language={"javascript"}
                 showLineNumbers={false}

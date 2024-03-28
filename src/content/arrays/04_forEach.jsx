@@ -6,7 +6,10 @@ import { getTodos } from "../../_connections/connections";
 import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ArraysForEach() {
-  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+  const { data: todos, status } = useQuery({
+    queryKey: ["todos"],
+    queryFn: getTodos,
+  });
 
   let sum = 0;
 
@@ -18,8 +21,14 @@ function ArraysForEach() {
   return (
     <MainLayout>
       {status === "success" && (
-        <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-          <Link href="https://www.w3schools.com/jsref/jsref_foreach.asp" target="_blank">
+        <Stack
+          alignItems={"center"}
+          sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}
+        >
+          <Link
+            href="https://www.w3schools.com/jsref/jsref_foreach.asp"
+            target="_blank"
+          >
             <Typography variant="h2">Reference ForEach</Typography>
           </Link>
           <Stack direction={"row"}>
@@ -39,8 +48,18 @@ function ArraysForEach() {
                     Will run the function for each element of the array.
                   </ListItem>
                   <ListItem sx={{ display: "list-item" }}>
-                    This is a better option for achieving something based on the array element rather than creating a
-                    mutated array.
+                    This is a better option for achieving something based on the
+                    array element rather than creating a mutated array.
+                  </ListItem>
+                  <ListItem sx={{ display: "list-item" }}>
+                    <Link
+                      href="https://www.w3schools.com/jsref/jsref_foreach.asp"
+                      target="_blank"
+                    >
+                      <Typography>
+                        W3Schools Documentation Array ForEach
+                      </Typography>
+                    </Link>
                   </ListItem>
                 </List>
               </Box>
@@ -59,7 +78,10 @@ function ArraysForEach() {
                   Example - Number of todos {sum}
                 </Typography>
               </Stack>
-              <Link href="https://youtu.be/BiblrzKMllc?si=8TzvxDZfIClQ9uik" target="_blank">
+              <Link
+                href="https://youtu.be/BiblrzKMllc?si=8TzvxDZfIClQ9uik"
+                target="_blank"
+              >
                 <Typography variant="h6" align="center">
                   WDS Video on this Hook
                 </Typography>
@@ -68,13 +90,13 @@ function ArraysForEach() {
             <Box sx={{ margin: 5 }}>
               <CopyBlock
                 text={`
-const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
-
-if (status === "success") {
-  let sum = 0;
-  todos.forEach((t) => sum++);
-  console.log(sum);
-}
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((response) => response.json())
+  .then((todos) => {
+    let sum = 0;
+    todos.forEach((t) => sum++);
+    console.log(sum);
+  });
               `}
                 language={"javascript"}
                 showLineNumbers={false}

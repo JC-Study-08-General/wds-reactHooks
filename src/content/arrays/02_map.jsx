@@ -6,7 +6,10 @@ import { getTodos } from "../../_connections/connections";
 import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ArraysMap() {
-  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+  const { data: todos, status } = useQuery({
+    queryKey: ["todos"],
+    queryFn: getTodos,
+  });
 
   // const arrFilter = { total: 0, completed: 0, incomplete: 0 };
 
@@ -34,8 +37,14 @@ function ArraysMap() {
   return (
     <MainLayout>
       {status === "success" && (
-        <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-          <Link href="https://www.w3schools.com/jsref/jsref_map.asp" target="_blank">
+        <Stack
+          alignItems={"center"}
+          sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}
+        >
+          <Link
+            href="https://www.w3schools.com/jsref/jsref_map.asp"
+            target="_blank"
+          >
             <Typography variant="h2">Reference Map</Typography>
           </Link>
           <Stack direction={"row"}>
@@ -52,14 +61,28 @@ function ArraysMap() {
               >
                 <List sx={{ listStyleType: "disc" }}>
                   <ListItem sx={{ display: "list-item" }}>
-                    creates a new array from calling a function for every array element.
+                    creates a new array from calling a function for every array
+                    element, this is a{" "}
+                    <a href="https://developer.mozilla.org/en-US/docs/Glossary/Shallow_copy">
+                      shallow copy
+                    </a>
+                    .
                   </ListItem>
                   <ListItem sx={{ display: "list-item", color: "firebrick" }}>
-                    BUT it still references the original sauce so changes made to this will be reflected in the new
-                    array.
+                    BUT it still references the original sauce so changes made
+                    to this will be reflected in the new array.
                   </ListItem>
                   <ListItem sx={{ display: "list-item", color: "green" }}>
-                    This can be combatted by creating a copy without references: const newArr = [...origArr]
+                    This can be combatted by creating a copy without references:
+                    const newArr = [...origArr]
+                  </ListItem>
+                  <ListItem sx={{ display: "list-item" }}>
+                    <Link
+                      href="https://www.w3schools.com/jsref/jsref_map.asp"
+                      target="_blank"
+                    >
+                      <Typography>W3Schools Documentation Array Map</Typography>
+                    </Link>
                   </ListItem>
                 </List>
               </Box>
@@ -78,7 +101,10 @@ function ArraysMap() {
                   Example - None just see code
                 </Typography>
               </Stack>
-              <Link href="https://youtu.be/BiblrzKMllc?si=8TzvxDZfIClQ9uik" target="_blank">
+              <Link
+                href="https://youtu.be/BiblrzKMllc?si=8TzvxDZfIClQ9uik"
+                target="_blank"
+              >
                 <Typography variant="h6" align="center">
                   WDS Video on this Hook
                 </Typography>
@@ -87,10 +113,10 @@ function ArraysMap() {
             <Box sx={{ margin: 5 }}>
               <CopyBlock
                 text={`
-  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
-
-  // This will mutate the original
-  if (status === "success") {
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((response) => response.json())
+  .then((todos) => {
+    // This will mutate the original  
     const newArr = todos.map((a, i) => {
       a.title = \`Revised title \${i}\`;
       return a;
@@ -99,16 +125,17 @@ function ArraysMap() {
     todos.shift();
     console.log(todos);
     console.log(newArr);
-  }
-
-  // This Does Not mutate the original
-  if (status === "success") {
+    
+  
+    // This Does Not mutate the original    
     const newArr = todos.map((a, i) => ({...a, title: \`Revised title \${i}\`}));
     todos[1].title = "test test New";
     todos.shift();
     console.log(todos);
     console.log(newArr);
-  }
+    
+  });
+
               `}
                 language={"javascript"}
                 showLineNumbers={false}

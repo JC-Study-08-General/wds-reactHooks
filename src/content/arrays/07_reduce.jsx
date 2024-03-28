@@ -6,7 +6,10 @@ import { getTodos } from "../../_connections/connections";
 import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ArraysReduce() {
-  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+  const { data: todos, status } = useQuery({
+    queryKey: ["todos"],
+    queryFn: getTodos,
+  });
 
   let sumOfIds = 0;
 
@@ -18,8 +21,14 @@ function ArraysReduce() {
   return (
     <MainLayout>
       {status === "success" && (
-        <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-          <Link href="https://www.w3schools.com/jsref/jsref_reduce.asp" target="_blank">
+        <Stack
+          alignItems={"center"}
+          sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}
+        >
+          <Link
+            href="https://www.w3schools.com/jsref/jsref_reduce.asp"
+            target="_blank"
+          >
             <Typography variant="h2">Reference Reduce</Typography>
           </Link>
           <Stack direction={"row"}>
@@ -35,13 +44,25 @@ function ArraysReduce() {
                 }}
               >
                 <List sx={{ listStyleType: "disc" }}>
-                  <ListItem sx={{ display: "list-item" }}>Method returns a single value.</ListItem>
                   <ListItem sx={{ display: "list-item" }}>
-                    Takes in 2 elements, first inital value, second the element. Plus outside of the callback add ,
-                    initial value.
+                    Method returns a single value.
+                  </ListItem>
+                  <ListItem sx={{ display: "list-item" }}>
+                    Takes in 2 elements, first inital value, second the element.
+                    Plus outside of the callback add , initial value.
                   </ListItem>
                   <ListItem sx={{ display: "list-item" }}>
                     method executes a reducer function for array element.
+                  </ListItem>
+                  <ListItem sx={{ display: "list-item" }}>
+                    <Link
+                      href="https://www.w3schools.com/jsref/jsref_reduce.asp"
+                      target="_blank"
+                    >
+                      <Typography>
+                        W3Schools Documentation Array Reduce
+                      </Typography>
+                    </Link>
                   </ListItem>
                 </List>
               </Box>
@@ -60,7 +81,10 @@ function ArraysReduce() {
                   Example - Sum of the id numbers is: {sumOfIds}
                 </Typography>
               </Stack>
-              <Link href="https://youtu.be/BiblrzKMllc?si=8TzvxDZfIClQ9uik" target="_blank">
+              <Link
+                href="https://youtu.be/BiblrzKMllc?si=8TzvxDZfIClQ9uik"
+                target="_blank"
+              >
                 <Typography variant="h6" align="center">
                   WDS Video on this Hook
                 </Typography>
@@ -69,14 +93,14 @@ function ArraysReduce() {
             <Box sx={{ margin: 5 }}>
               <CopyBlock
                 text={`
-const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
-
-let sumOfIds = 0;
-
-if (status === "success") {
-  sumOfIds = todos.reduce((accumulator, t) => accumulator + t.id, 0);
-  console.log(sumOfIds);
-}
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((response) => response.json())
+  .then((todos) => {
+    let sumOfIds = 0;
+    
+    sumOfIds = todos.reduce((accumulator, t) => accumulator + t.id, 0);
+    console.log(todos, sumOfIds);
+  });
               `}
                 language={"javascript"}
                 showLineNumbers={false}

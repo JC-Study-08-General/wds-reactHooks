@@ -6,7 +6,10 @@ import { getTodos } from "../../_connections/connections";
 import MainLayout from "../../_mainLayout/pages/MainLayoutView";
 
 function ArraysChaining() {
-  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+  const { data: todos, status } = useQuery({
+    queryKey: ["todos"],
+    queryFn: getTodos,
+  });
 
   function top10Todos() {
     return todos
@@ -18,8 +21,14 @@ function ArraysChaining() {
   return (
     <MainLayout>
       {status === "success" && (
-        <Stack alignItems={"center"} sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}>
-          <Link href="https://www.geeksforgeeks.org/chaining-of-array-methods-in-javascript/" target="_blank">
+        <Stack
+          alignItems={"center"}
+          sx={{ height: "calc(100dvh - 35px)", overflowY: "auto" }}
+        >
+          <Link
+            href="https://www.geeksforgeeks.org/chaining-of-array-methods-in-javascript/"
+            target="_blank"
+          >
             <Typography variant="h2">Reference Chaining</Typography>
           </Link>
           <Stack direction={"row"}>
@@ -35,10 +44,23 @@ function ArraysChaining() {
                 }}
               >
                 <List sx={{ listStyleType: "disc" }}>
-                  <ListItem sx={{ display: "list-item" }}>This is a process of combining methods.</ListItem>
+                  <ListItem sx={{ display: "list-item" }}>
+                    This is a process of combining methods.
+                  </ListItem>
                   <ListItem sx={{ display: "list-item", color: "firebrick" }}>
-                    Thought should be given to whether this is the appropriate approach and if conseals logic for code
-                    reviews, sometimes more code is better.
+                    Thought should be given to whether this is the appropriate
+                    approach and if conseals logic for code reviews, sometimes
+                    more code is better.
+                  </ListItem>
+                  <ListItem sx={{ display: "list-item" }}>
+                    <Link
+                      href="https://www.freecodecamp.org/news/beware-of-chaining-array-methods-in-javascript-ef3983b60fbc/"
+                      target="_blank"
+                    >
+                      <Typography>
+                        FreeCodeCamp white paper on chaining
+                      </Typography>
+                    </Link>
                   </ListItem>
                 </List>
               </Box>
@@ -60,7 +82,10 @@ function ArraysChaining() {
                   <Typography>- {todo}</Typography>
                 ))}
               </Stack>
-              <Link href="https://youtu.be/YIp4fHeO8Rk?si=V6jMJXFjltRzNyUj" target="_blank">
+              <Link
+                href="https://youtu.be/YIp4fHeO8Rk?si=V6jMJXFjltRzNyUj"
+                target="_blank"
+              >
                 <Typography variant="h6" align="center">
                   WDS Video on this Hook
                 </Typography>
@@ -69,16 +94,18 @@ function ArraysChaining() {
             <Box sx={{ margin: 5 }}>
               <CopyBlock
                 text={`
-  const { data: todos, status } = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((response) => response.json())
+  .then((todos) => {
+    function top10Todos() {
+      return todos
+        .filter((t, i) => i < 10)
+        .map((n) => n.title)
+        .sort();
+    }
 
-  function top10Todos() {
-    return todos
-      .filter((t, i) => i < 10)
-      .map((n) => n.title)
-      .sort();
-  }
-
-              `}
+    console.log(todos, top10Todos());
+  });`}
                 language={"javascript"}
                 showLineNumbers={false}
                 theme={dracula}
